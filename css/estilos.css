@@ -248,3 +248,225 @@ button:hover, .boton-secundario:hover { filter: brightness(1.15); }
     header { padding: 18px 20px; }
 }
 
+
+/* =====================================================
+   MEJORAS DEL LISTADO PÚBLICO
+   ===================================================== */
+
+/* Controles de ordenación y visualización */
+
+.controles-listado {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.controles-listado .resumen-listado {
+    margin: 0;
+}
+
+.opciones-listado {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.opciones-listado label {
+    color: var(--secondary);
+    font-size: 14px;
+}
+
+.opciones-listado select {
+    padding: 10px 12px;
+    border-radius: 6px;
+    background: #222;
+    color: white;
+    border: 1px solid #444;
+    font: inherit;
+    cursor: pointer;
+}
+
+.opciones-listado button {
+    padding: 10px 14px;
+    border-radius: 7px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+#cambiarDireccion {
+    background: var(--accent);
+}
+
+#limpiarFiltros {
+    background: #444;
+}
+
+.selector-vista {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: #1b1b1b;
+}
+
+.selector-vista button {
+    width: 38px;
+    height: 34px;
+    padding: 0;
+    background: transparent;
+    color: var(--secondary);
+    font-size: 17px;
+    border-radius: 5px;
+}
+
+.selector-vista button.vista-activa {
+    background: var(--accent);
+    color: white;
+}
+
+/* =====================================================
+   TARJETAS DE CAMISETAS
+   ===================================================== */
+
+.tarjeta-camiseta {
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.tarjeta-camiseta:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0,0,0,.3);
+}
+
+.boton-ver-ficha {
+    display: block;
+    text-align: center;
+    margin: 0 15px 15px;
+    padding: 10px 15px;
+    border-radius: 7px;
+    font-size: 13px;
+    font-weight: 600;
+    transition: background .2s ease;
+}
+
+.boton-ver-ficha:hover {
+    background: var(--accent);
+}
+
+/* =====================================================
+   VISTA DE LISTADO HORIZONTAL
+   ===================================================== */
+
+.galeria-camisetas.vista-listado {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.galeria-camisetas.vista-listado .tarjeta-camiseta {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    min-width: 0;
+}
+
+.galeria-camisetas.vista-listado .enlace-tarjeta {
+    display: flex;
+    flex: 1;
+    min-width: 0;
+    align-items: stretch;
+}
+
+.galeria-camisetas.vista-listado .imagen-camiseta,
+.galeria-camisetas.vista-listado .imagen-no-disponible {
+    width: 175px;
+    min-width: 175px;
+    height: 190px;
+    object-fit: contain;
+}
+
+.galeria-camisetas.vista-listado .datos-camiseta {
+    flex: 1;
+    min-width: 0;
+    padding: 18px 22px;
+}
+
+.galeria-camisetas.vista-listado .datos-camiseta h3 {
+    margin-bottom: 12px;
+}
+
+.galeria-camisetas.vista-listado .boton-ver-ficha {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    flex: 0 0 125px;
+    margin: 15px;
+}
+
+/* =====================================================
+   ADAPTACIÓN A MÓVILES
+   ===================================================== */
+
+@media (max-width: 800px) {
+
+    .controles-listado {
+        align-items: flex-start;
+    }
+
+    .opciones-listado {
+        justify-content: flex-start;
+    }
+
+    .galeria-camisetas.vista-listado .imagen-camiseta,
+    .galeria-camisetas.vista-listado .imagen-no-disponible {
+        width: 140px;
+        min-width: 140px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .controles-listado {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .opciones-listado {
+        justify-content: flex-start;
+    }
+
+    .opciones-listado label {
+        width: 100%;
+    }
+
+    .opciones-listado select {
+        max-width: 100%;
+    }
+
+    .galeria-camisetas.vista-listado .tarjeta-camiseta {
+        flex-direction: column;
+    }
+
+    .galeria-camisetas.vista-listado .enlace-tarjeta {
+        flex-direction: column;
+    }
+
+    .galeria-camisetas.vista-listado .imagen-camiseta,
+    .galeria-camisetas.vista-listado .imagen-no-disponible {
+        width: 100%;
+        min-width: 0;
+        height: 190px;
+    }
+
+    .galeria-camisetas.vista-listado .boton-ver-ficha {
+        flex: none;
+        margin: 0 15px 15px;
+    }
+}
