@@ -1,6 +1,7 @@
 [
     {
         "id": 1,
+        "fechaAlta": "2026-11-08",
         "deporte": "Fútbol",
         "caracter": "Club",
         "pais": "España",
@@ -16,6 +17,7 @@
     },
     {
         "id": 2,
+        "fechaAlta": "2026-11-08",
         "deporte": "Rugby",
         "caracter": "Club",
         "pais": "España",
@@ -31,6 +33,7 @@
     },
     {
         "id": 3,
+        "fechaAlta": "2026-11-08",
         "deporte": "Baloncesto",
         "caracter": "Club",
         "pais": "España",
@@ -46,6 +49,7 @@
     },
     {
         "id": 4,
+        "fechaAlta": "2026-11-08",
         "deporte": "Baloncesto",
         "caracter": "Club",
         "pais": "Estados Unidos",
@@ -61,6 +65,7 @@
     },
     {
         "id": 5,
+        "fechaAlta": "2026-11-08",
         "deporte": "Fútbol",
         "caracter": "Club",
         "pais": "España",
@@ -76,6 +81,7 @@
     },
     {
         "id": 6,
+        "fechaAlta": "2026-11-08",
         "deporte": "Fútbol",
         "caracter": "Selección",
         "pais": "España",
@@ -91,6 +97,7 @@
     },
     {
         "id": 7,
+        "fechaAlta": "2026-11-08",
         "deporte": "Fútbol",
         "caracter": "Selección",
         "pais": "España",
@@ -106,6 +113,7 @@
     },
     {
         "id": 8,
+        "fechaAlta": "2026-11-08",
         "deporte": "Rugby",
         "caracter": "Selección",
         "pais": "Reino Unido",
@@ -121,6 +129,7 @@
     },
     {
         "id": 9,
+        "fechaAlta": "2026-11-08",
         "deporte": "Fútbol",
         "caracter": "Selección",
         "pais": "España",
@@ -136,6 +145,7 @@
     },
     {
         "id": 10,
+        "fechaAlta": "2026-11-08",
         "deporte": "Rugby",
         "caracter": "Club",
         "pais": "España",
@@ -151,6 +161,7 @@
     },
     {
         "id": 11,
+        "fechaAlta": "2026-11-08",
         "deporte": "Fútbol",
         "caracter": "Selección",
         "pais": "España",
@@ -166,6 +177,7 @@
     },
     {
         "id": 12,
+        "fechaAlta": "2026-11-08",
         "deporte": "Fútbol",
         "caracter": "Club",
         "pais": "España",
@@ -181,6 +193,7 @@
     },
     {
         "id": 13,
+        "fechaAlta": "2026-11-08",
         "deporte": "Fútbol",
         "caracter": "Club",
         "pais": "España",
@@ -196,6 +209,7 @@
     },
     {
         "id": 14,
+        "fechaAlta": "2026-11-08",
         "deporte": "Rugby",
         "caracter": "Selección",
         "pais": "Gales",
@@ -211,6 +225,7 @@
     },
     {
         "id": 15,
+        "fechaAlta": "2026-11-08",
         "deporte": "Fútbol",
         "caracter": "Club",
         "pais": "España",
@@ -226,6 +241,7 @@
     },
     {
         "id": 16,
+        "fechaAlta": "2026-11-08",
         "deporte": "Fútbol",
         "caracter": "Club",
         "pais": "España",
@@ -241,6 +257,7 @@
     },
     {
         "id": 17,
+        "fechaAlta": "2026-11-08",
         "deporte": "Rugby",
         "caracter": "Selección",
         "pais": "Francia",
