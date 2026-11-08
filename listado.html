@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explora la colección de camisetas deportivas.">
+    <title>Mi colección - Web Camisetas</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+<header>
+    <h1>👕 Mi colección</h1>
+    <p>Todas las camisetas en un mismo lugar</p>
+</header>
+
+<main class="contenedor-listado">
+    <div class="cabecera-listado">
+        <h2>Galería de camisetas</h2>
+        <a href="index.html" class="boton-secundario">Volver al inicio</a>
+    </div>
+
+    <section class="filtros-listado">
+        <input type="search" id="busqueda"
+               placeholder="Buscar camiseta, jugador, marca..."
+               aria-label="Buscar camisetas">
+        <select id="filtroDeporte"><option value="">Todos los deportes</option></select>
+        <select id="filtroCaracter"><option value="">Club y selección</option></select>
+        <select id="filtroPais"><option value="">Todos los países</option></select>
+        <select id="filtroModelo"><option value="">Todos los modelos</option></select>
+    </section>
+
+    <div class="acciones-listado">
+        <p id="contadorCamisetas" class="resumen-listado">Cargando colección...</p>
+        <button type="button" id="limpiarFiltros">Limpiar filtros</button>
+    </div>
+
+    <section id="galeriaCamisetas" class="galeria-camisetas"></section>
+    <p id="mensajeListado" role="status" aria-live="polite"></p>
+</main>
+
+<footer>Colección personal de camisetas deportivas</footer>
+<script src="js/listado.js"></script>
+</body>
+</html>

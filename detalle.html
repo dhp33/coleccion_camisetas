@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ficha de camiseta - Web Camisetas</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+<header>
+    <h1>👕 Ficha de camiseta</h1>
+    <p>Información de la colección</p>
+</header>
+
+<main class="contenedor-detalle">
+    <div class="cabecera-detalle">
+        <h2 id="nombreCamiseta">Cargando camiseta...</h2>
+        <a href="listado.html" class="boton-secundario">Volver al listado</a>
+    </div>
+
+    <div class="contenido-detalle">
+        <section class="slider" id="slider">
+            <div class="slider-ventana">
+                <div class="slider-pista" id="sliderPista"></div>
+            </div>
+            <button type="button" class="slider-flecha slider-anterior"
+                    id="sliderAnterior" aria-label="Fotografía anterior">&#10094;</button>
+            <button type="button" class="slider-flecha slider-siguiente"
+                    id="sliderSiguiente" aria-label="Fotografía siguiente">&#10095;</button>
+            <div class="slider-pie" id="sliderPie">
+                <div class="slider-indicadores" id="sliderIndicadores"></div>
+                <span class="slider-contador" id="sliderContador"></span>
+            </div>
+        </section>
+
+        <section class="informacion-detalle">
+            <h2>Información de la camiseta</h2>
+            <div id="datosDetalle" class="datos-detalle"></div>
+            <div id="descripcionDetalle" class="descripcion-detalle"></div>
+        </section>
+    </div>
+
+    <p id="mensajeDetalle" role="status" aria-live="polite"></p>
+</main>
+
+<div id="visorFoto" class="foto-ampliada">
+    <button type="button" class="cerrar-ampliada" id="cerrarVisor"
+            aria-label="Cerrar fotografía">&times;</button>
+    <img id="imagenAmpliada" src="" alt="Fotografía ampliada">
+</div>
+
+<footer>Colección personal de camisetas deportivas</footer>
+<script src="js/detalle.js"></script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Catálogo público de camisetas deportivas.">
+    <title>Colección de Camisetas</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <header>
+        <h1>⚽ Colección de Camisetas</h1>
+        <p>Catálogo personal de camisetas deportivas</p>
+    </header>
+
+    <main class="portada">
+        <section class="portada-intro">
+            <h2>Mi colección</h2>
+            <p>Un recorrido por las camisetas que forman parte de la colección.</p>
+        </section>
+
+        <section class="acciones-publicas">
+            <a href="listado.html" class="accion-publica">
+                <h3>📋 Explorar colección</h3>
+                <p>Ver camisetas, buscar equipos y consultar sus fichas.</p>
+            </a>
+        </section>
+
+        <section class="estadisticas-publicas">
+            <div class="stat-total">
+                <strong id="totalCamisetas">0</strong>
+                <span>Camisetas registradas</span>
+            </div>
+
+            <div class="grafico-card">
+                <h2>Camisetas por equipo o selección</h2>
+                <div class="distribucion">
+                    <div id="graficoEquipos" class="grafico-donut"
+                         role="img" aria-label="Distribución de camisetas por equipo"></div>
+                    <div id="leyendaEquipos" class="leyenda-grafico">
+                        <span class="grafico-vacio">Cargando colección...</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <p id="estadoCarga" class="estado-carga" role="status" aria-live="polite"></p>
+    </main>
+
+    <footer>Colección personal de camisetas deportivas</footer>
+    <script src="js/app.js"></script>
+</body>
+</html>
