@@ -1,1 +1,250 @@
+/* =====================================================
+   BASE
+   ===================================================== */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+    --bg: #121212;
+    --panel: #1c1c1c;
+    --panel-hover: #262626;
+    --border: #333;
+    --text: #f5f5f5;
+    --secondary: #bdbdbd;
+    --accent: #7651a8;
+    --color-tarjeta: #242424;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    line-height: 1.45;
+}
+
+header {
+    background: var(--panel);
+    border-bottom: 1px solid var(--border);
+    padding: 22px 30px;
+}
+
+header h1 { margin-bottom: 5px; }
+header p { color: var(--secondary); }
+
+main { max-width: 1200px; margin: 35px auto; padding: 0 20px; }
+
+footer {
+    margin-top: 50px;
+    padding: 20px;
+    text-align: center;
+    color: var(--secondary);
+    border-top: 1px solid var(--border);
+}
+
+a { color: inherit; }
+
+button, .boton-secundario {
+    padding: 11px 18px;
+    border: 0;
+    border-radius: 6px;
+    text-decoration: none;
+    cursor: pointer;
+    font: inherit;
+}
+
+button { background: var(--accent); color: white; }
+.boton-secundario { background: #444; color: white; display: inline-block; }
+button:hover, .boton-secundario:hover { filter: brightness(1.15); }
+
+/* =====================================================
+   PORTADA PÚBLICA
+   ===================================================== */
+.portada {
+    max-width: 1050px;
+    margin: 45px auto;
+    padding: 0 20px;
+}
+.portada-intro {
+    text-align: center;
+    margin: 10px auto 35px;
+}
+.portada-intro h2 { font-size: clamp(1.7rem, 4vw, 2.5rem); margin-bottom: 8px; }
+.portada-intro p { color: var(--secondary); }
+.acciones-publicas {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    max-width: 600px;
+    margin: 0 auto 35px;
+}
+.accion-publica {
+    display: block;
+    padding: 28px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 12px;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    box-shadow: 0 3px 12px rgba(0,0,0,.2);
+    transition: transform .2s, background .2s;
+}
+.accion-publica:hover { transform: translateY(-3px); background: var(--panel-hover); }
+.accion-publica h3 { font-size: 1.35rem; margin-bottom: 7px; }
+.accion-publica p { color: var(--secondary); }
+
+.estadisticas-publicas {
+    display: grid;
+    grid-template-columns: 210px minmax(0, 1fr);
+    gap: 22px;
+    margin: 0 auto 30px;
+}
+.stat-total, .grafico-card {
+    padding: 22px;
+    text-align: center;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: var(--panel);
+}
+.stat-total { display: flex; flex-direction: column; justify-content: center; }
+.stat-total strong { color: var(--accent); font-size: 3.4rem; line-height: 1.1; }
+.stat-total span { margin-top: 8px; color: var(--secondary); }
+.grafico-card h2 { margin-bottom: 18px; font-size: 1.1rem; }
+.distribucion { display: flex; align-items: center; justify-content: center; gap: 30px; }
+.grafico-donut {
+    width: 180px; height: 180px; flex: 0 0 180px;
+    border-radius: 50%; position: relative; background: #555;
+}
+.grafico-donut::after {
+    content: ""; position: absolute; width: 58%; height: 58%;
+    top: 21%; left: 21%; border-radius: 50%; background: var(--panel);
+}
+.leyenda-grafico {
+    display: flex; flex-direction: column; gap: 8px;
+    max-height: 185px; min-width: 180px; overflow-y: auto; text-align: left;
+}
+.elemento-leyenda { display: flex; align-items: center; gap: 8px; font-size: .88rem; }
+.color-leyenda { width: 11px; height: 11px; min-width: 11px; border-radius: 3px; }
+.cantidad-leyenda { margin-left: auto; padding-left: 8px; font-weight: 700; }
+.grafico-vacio { color: var(--secondary); font-size: .9rem; }
+.estado-carga { text-align: center; color: var(--secondary); margin-top: 15px; }
+
+/* =====================================================
+   LISTADO PÚBLICO
+   ===================================================== */
+.contenedor-listado { max-width: 1200px; margin: 30px auto; padding: 0 20px; }
+.cabecera-listado, .acciones-listado {
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 15px;
+}
+.cabecera-listado { margin-bottom: 20px; }
+.filtros-listado {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px; margin: 25px 0;
+}
+.filtros-listado input, .filtros-listado select {
+    width: 100%; box-sizing: border-box; padding: 12px;
+    border-radius: 6px; background: #222; color: white; border: 1px solid #444;
+    font: inherit;
+}
+.resumen-listado { margin: 15px 0; color: var(--secondary); }
+.galeria-camisetas {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 22px;
+}
+.tarjeta-camiseta {
+    overflow: hidden; border-radius: 10px; background: var(--color-tarjeta);
+    border: 1px solid var(--border); box-shadow: 0 3px 10px rgba(0,0,0,.2);
+}
+.enlace-tarjeta { display: block; color: inherit; text-decoration: none; }
+.enlace-tarjeta:hover h3 { color: #c3a7ee; }
+.imagen-camiseta {
+    width: 100%; height: 250px; object-fit: contain; display: block;
+    background: transparent;
+}
+.imagen-no-disponible {
+    height: 250px; display: flex; align-items: center; justify-content: center;
+    background: transparent; color: var(--secondary); font-size: 14px;
+}
+.datos-camiseta { padding: 15px; }
+.datos-camiseta h3 { margin: 0 0 10px; }
+.datos-camiseta p { margin: 5px 0; font-size: 14px; color: var(--secondary); }
+.datos-camiseta strong { color: var(--text); }
+.boton-ver-ficha { display: inline-block; margin: 0 15px 15px; }
+.sin-resultados { text-align: center; padding: 40px 15px; grid-column: 1 / -1; }
+
+/* =====================================================
+   FICHA PÚBLICA
+   ===================================================== */
+.contenedor-detalle { max-width: 1200px; margin: 30px auto; padding: 0 20px; }
+.cabecera-detalle {
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 15px; margin-bottom: 25px;
+}
+.contenido-detalle {
+    display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+    gap: 30px; align-items: start;
+}
+.slider { position: relative; width: 100%; overflow: hidden; background: transparent; border-radius: 10px; }
+.slider-ventana { width: 100%; overflow: hidden; }
+.slider-pista { display: flex; transition: transform .35s ease; }
+.slider-foto {
+    flex: 0 0 100%; min-width: 100%; height: 480px;
+    display: flex; align-items: center; justify-content: center;
+}
+.slider-foto img { width: 100%; height: 100%; object-fit: contain; cursor: zoom-in; }
+.slider-flecha {
+    position: absolute; top: 50%; transform: translateY(-50%); z-index: 2;
+    width: 42px; height: 42px; padding: 0; border-radius: 50%;
+    background: rgba(0,0,0,.65); color: white; font-size: 25px;
+}
+.slider-flecha[hidden], .slider-pie[hidden] { display: none; }
+.slider-anterior { left: 12px; }
+.slider-siguiente { right: 12px; }
+.slider-pie {
+    display: flex; align-items: center; justify-content: center; gap: 12px;
+    padding: 12px; background: transparent;
+}
+.slider-indicadores { display: flex; gap: 8px; }
+.slider-punto { width: 10px; height: 10px; padding: 0; border: 0; border-radius: 50%; background: #777; }
+.slider-punto.activo { background: #ccc; transform: scale(1.2); }
+.slider-contador { font-size: 13px; color: inherit; }
+.slider-vacio { min-height: 250px; display: flex; align-items: center; justify-content: center; color: #aaa; }
+.informacion-detalle {
+    padding: 25px; border-radius: 10px; background: var(--panel);
+    border: 1px solid var(--border); min-width: 0;
+}
+.informacion-detalle h2 { margin: 0 0 20px; }
+.datos-detalle { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+.dato-detalle { border-bottom: 1px solid rgba(128,128,128,.25); padding-bottom: 10px; overflow-wrap: anywhere; }
+.dato-detalle strong { display: block; margin-bottom: 5px; opacity: .7; font-size: 13px; }
+.descripcion-detalle { margin-top: 25px; white-space: pre-wrap; line-height: 1.6; }
+.descripcion-detalle:empty { display: none; }
+.foto-ampliada {
+    position: fixed; inset: 0; background: rgba(0,0,0,.92); z-index: 1000;
+    display: none; align-items: center; justify-content: center; padding: 20px;
+}
+.foto-ampliada.visible { display: flex; }
+.foto-ampliada img { max-width: 95%; max-height: 90vh; object-fit: contain; }
+.cerrar-ampliada {
+    position: absolute; top: 20px; right: 25px; font-size: 35px;
+    color: white; background: transparent; border: none; cursor: pointer;
+}
+
+@media (max-width: 800px) {
+    .estadisticas-publicas { grid-template-columns: 1fr; }
+    .contenido-detalle { grid-template-columns: 1fr; gap: 20px; }
+    .slider-foto { height: 400px; }
+}
+@media (max-width: 600px) {
+    .distribucion { flex-direction: column; gap: 18px; }
+    .leyenda-grafico { width: 100%; max-height: 180px; }
+}
+@media (max-width: 500px) {
+    .galeria-camisetas { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+    .imagen-camiseta, .imagen-no-disponible { height: 180px; }
+    .datos-camiseta { padding: 10px; }
+    .datos-detalle { grid-template-columns: 1fr; }
+    .slider-foto { height: 320px; }
+    .informacion-detalle { padding: 18px; }
+    header { padding: 18px 20px; }
+}
 
