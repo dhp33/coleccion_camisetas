@@ -366,5 +366,62 @@
         ],
         "fotoFrontal": "000019_foto1.webp",
         "fotoTrasera": ""
+    },
+    {
+        "id": 20,
+        "fechaAlta": "2026-11-09",
+        "deporte": "Fútbol",
+        "caracter": "Club",
+        "pais": "España",
+        "nombre": "Real Madrid",
+        "anio": 2025,
+        "marca": "Adidas",
+        "modelo": "Visitante",
+        "jugador": "",
+        "dorsal": "",
+        "descripcion": "",
+        "fotos": [
+            "000020_foto1.webp"
+        ],
+        "fotoFrontal": "000020_foto1.webp",
+        "fotoTrasera": ""
+    },
+    {
+        "id": 21,
+        "fechaAlta": "2026-11-09",
+        "deporte": "Fútbol",
+        "caracter": "Selección",
+        "pais": "España",
+        "nombre": "Seleccion Española",
+        "anio": 2026,
+        "marca": "Adidas",
+        "modelo": "Visitante",
+        "jugador": "",
+        "dorsal": "",
+        "descripcion": "",
+        "fotos": [
+            "000021_foto1.webp"
+        ],
+        "fotoFrontal": "000021_foto1.webp",
+        "fotoTrasera": ""
+    },
+    {
+        "id": 22,
+        "fechaAlta": "2026-11-09",
+        "deporte": "Fútbol",
+        "caracter": "Club",
+        "pais": "Italia",
+        "nombre": "Venezia FC",
+        "anio": 2023,
+        "marca": "Kappa",
+        "modelo": "Tercera",
+        "jugador": "",
+        "dorsal": "",
+        "descripcion": "",
+        "fotos": [
+            "000022_foto1.webp"
+        ],
+        "fotoFrontal": "000022_foto1.webp",
+        "fotoTrasera": ""
     }
 ]
