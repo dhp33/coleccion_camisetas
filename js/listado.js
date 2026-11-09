@@ -1,8 +1,8 @@
 
 let todasLasCamisetas = [];
 
-let criterioOrden = "fecha";
-let direccionOrden = -1;
+let criterioOrden = "equipoAnio";
+let direccionOrden = 1;
 let vistaActual = "cuadricula";
 
 document.addEventListener("DOMContentLoaded", cargarListado);
@@ -37,6 +37,10 @@ async function cargarListado() {
 
         // Guardar la posición original para mantener el orden
         // cuando no exista fecha de incorporación.
+        todasLasCamisetas.forEach((camiseta, indice) => {
+            camiseta._ordenOriginal = indice;
+        });
+
         todasLasCamisetas.forEach((camiseta, indice) => {
             camiseta._ordenOriginal = indice;
         });
@@ -182,6 +186,19 @@ function ordenarCamisetas(camisetas) {
 
         switch (criterioOrden) {
 
+            case "equipoAnio":
+				// Primero, equipos de la A a la Z.
+				resultado = String(a.nombre || "").localeCompare(
+					String(b.nombre || ""), "es", { sensitivity: "base" }
+				);
+
+				if (resultado === 0) {
+					// Dentro de cada equipo, primero los años más antiguos.
+					resultado = (Number(a.anio) || 0) - (Number(b.anio) || 0);
+					return resultado * direccionOrden;
+				}
+				break;
+
             case "fecha": {
                 const fechaA = a.fechaAlta
                     ? new Date(a.fechaAlta).getTime()
@@ -229,7 +246,7 @@ function ordenarCamisetas(camisetas) {
 
         // Aplicar dirección y conservar orden original en empates.
         return (resultado * direccionOrden) ||
-            (a._ordenOriginal - b._ordenOriginal);
+            ((a._ordenOriginal ?? 0) - (b._ordenOriginal ?? 0));
     });
 }
 
@@ -239,9 +256,9 @@ function cambiarDireccionOrden() {
 
     const boton = document.getElementById("cambiarDireccion");
 
-    boton.textContent = direccionOrden === -1
-        ? "Descendente ↓"
-        : "Ascendente ↑";
+    boton.textContent = direccionOrden === 1
+        ? "Ascendente ↑"
+        : "Descendente ↓";
 
     aplicarFiltros();
 }
@@ -368,17 +385,10 @@ function mostrarCamisetas(camisetas) {
         datos.className = "datos-camiseta";
 
         const titulo = document.createElement("h3");
-        titulo.textContent = camiseta.nombre || "Sin nombre";
+        titulo.textContent = generarTituloCamiseta(camiseta);
 
         datos.appendChild(titulo);
 
-        agregarDato(datos, "Año", camiseta.anio);
-        agregarDato(datos, "País", camiseta.pais);
-        agregarDato(datos, "Deporte", camiseta.deporte);
-        agregarDato(datos, "Modelo", camiseta.modelo);
-        agregarDato(datos, "Marca", camiseta.marca);
-        agregarDato(datos, "Jugador", camiseta.jugador);
-        agregarDato(datos, "Dorsal", camiseta.dorsal);
 
         enlace.appendChild(datos);
         tarjeta.appendChild(enlace);
@@ -400,33 +410,6 @@ function mostrarCamisetas(camisetas) {
 // DATOS DE CADA CAMISETA
 // =====================================================
 
-function agregarDato(contenedor, etiqueta, valor) {
-
-    if (
-        valor === undefined ||
-        valor === null ||
-        String(valor).trim() === ""
-    ) {
-        return;
-    }
-
-    const parrafo = document.createElement("p");
-
-    const negrita = document.createElement("strong");
-    negrita.textContent = `${etiqueta}: `;
-
-    parrafo.append(
-        negrita,
-        document.createTextNode(String(valor))
-    );
-
-    contenedor.appendChild(parrafo);
-}
-
-// =====================================================
-// LIMPIAR FILTROS Y RESTABLECER ORDEN
-// =====================================================
-
 function limpiarFiltros() {
 
     document.getElementById("busqueda").value = "";
@@ -435,13 +418,38 @@ function limpiarFiltros() {
     document.getElementById("filtroPais").value = "";
     document.getElementById("filtroModelo").value = "";
 
-    criterioOrden = "fecha";
-    direccionOrden = -1;
+    criterioOrden = "equipoAnio";
+    direccionOrden = 1;
 
-    document.getElementById("ordenarPor").value = "fecha";
+    document.getElementById("ordenarPor").value = "equipoAnio";
 
     document.getElementById("cambiarDireccion").textContent =
-        "Descendente ↓";
+        "Ascendente ↑";
 
     aplicarFiltros();
 }
+
+// Construir un título descriptivo a partir de los datos de la camiseta.
+function generarTituloCamiseta(camiseta) {
+    const anio = camiseta.anio ? ` de ${camiseta.anio}` : "";
+    const caracter = String(camiseta.caracter || "").toLowerCase();
+    const modelo = String(camiseta.modelo || "").trim();
+    const tipoModelo = modelo ? `${modelo} ` : "";
+    const equipo = String(camiseta.nombre || "").trim();
+
+    // Árbitros: no se incluye el modelo.
+    if (caracter === "árbitro" || caracter === "arbitro") {
+        return `Camiseta de árbitro de ${equipo || "equipo sin nombre"}${anio}`;
+    }
+
+    // Selecciones.
+    if (caracter === "selección" || caracter === "seleccion") {
+        return `Camiseta ${tipoModelo}de ${equipo || "equipo sin nombre"}${anio}`
+            .replace(/\s+/g, " ").trim();
+    }
+
+    // Clubes.
+    return `Camiseta ${tipoModelo}del ${equipo || "equipo sin nombre"}${anio}`
+        .replace(/\s+/g, " ").trim();
+}
+

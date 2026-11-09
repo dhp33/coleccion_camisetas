@@ -23,7 +23,7 @@ async function cargarDetalle() {
         if (!camisetaActual) throw new Error("No se ha encontrado la camiseta solicitada.");
 
         document.getElementById("nombreCamiseta").textContent =
-            camisetaActual.nombre || "Camiseta sin nombre";
+            generarTituloCamiseta(camisetaActual);
 
         cargarFotografias();
         mostrarInformacion(camisetaActual);
@@ -39,14 +39,19 @@ async function cargarDetalle() {
 function cargarFotografias() {
     fotografias = [];
 
-    [
-        { nombre: camisetaActual.fotoFrontal, etiqueta: "Vista frontal" },
-        { nombre: camisetaActual.fotoTrasera, etiqueta: "Vista trasera" }
-    ].forEach(foto => {
-        if (!foto.nombre) return;
+    // fotos[] es la fuente principal, igual que en Administración.
+    // Los campos frontal/trasera mantienen compatibilidad con datos antiguos.
+    const nombres = Array.isArray(camisetaActual.fotos)
+        ? camisetaActual.fotos.filter(Boolean).slice(0, 4)
+        : [
+            camisetaActual.fotoFrontal,
+            camisetaActual.fotoTrasera
+        ].filter(Boolean);
+
+    nombres.forEach((nombre, indice) => {
         fotografias.push({
-            url: `fotos/${encodeURIComponent(foto.nombre)}`,
-            etiqueta: foto.etiqueta
+            url: `fotos/${encodeURIComponent(nombre)}`,
+            etiqueta: indice === 0 ? "Fotografía principal" : `Fotografía ${indice + 1}`
         });
     });
 
@@ -140,6 +145,7 @@ function mostrarInformacion(camiseta) {
     contenedor.replaceChildren();
 
     const campos = [
+        ["Equipo", camiseta.nombre],
         ["Deporte", camiseta.deporte],
         ["Carácter", camiseta.caracter],
         ["País", camiseta.pais],
@@ -199,3 +205,28 @@ function cerrarVisor() {
     document.getElementById("visorFoto").classList.remove("visible");
     document.getElementById("imagenAmpliada").src = "";
 }
+
+// Construir un título descriptivo a partir de los datos de la camiseta.
+function generarTituloCamiseta(camiseta) {
+    const anio = camiseta.anio ? ` de ${camiseta.anio}` : "";
+    const caracter = String(camiseta.caracter || "").toLowerCase();
+    const modelo = String(camiseta.modelo || "").trim();
+    const tipoModelo = modelo ? `${modelo} ` : "";
+    const equipo = String(camiseta.nombre || "").trim();
+
+    // Árbitros: no se incluye el modelo
+    if (caracter === "árbitro" || caracter === "arbitro") {
+        return `Camiseta de árbitro de ${equipo || "equipo sin nombre"}${anio}`;
+    }
+
+    // Selecciones
+    if (caracter === "selección" || caracter === "seleccion") {
+        return `Camiseta ${tipoModelo}de ${equipo || "equipo sin nombre"}${anio}`
+            .replace(/\s+/g, " ").trim();
+    }
+
+    // Clubes
+    return `Camiseta ${tipoModelo}del ${equipo || "equipo sin nombre"}${anio}`
+        .replace(/\s+/g, " ").trim();
+}
+
