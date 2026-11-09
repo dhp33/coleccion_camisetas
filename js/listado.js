@@ -14,6 +14,30 @@ function normalizar(texto) {
         .replace(/[\u0300-\u036f]/g, "");
 }
 
+// Obtener la prioridad de cada modelo de camiseta
+function obtenerPrioridadModelo(modelo) {
+
+    const prioridades = {
+        "local": 1,
+        "primera": 1,
+        "primera equipacion": 1,
+        "visitante": 2,
+        "segunda": 2,
+        "segunda equipacion": 2,
+        "tercera": 3,
+        "especial": 4,
+        "portero": 5,
+        "entrenamiento": 6,
+        "arbitro": 7
+    };
+
+    const modeloNormalizado = normalizar(modelo)
+        .replace(/\s+/g, " ")
+        .trim();
+
+    return prioridades[modeloNormalizado] ?? 99;
+}
+
 async function cargarListado() {
     const galeria = document.getElementById("galeriaCamisetas");
     const mensaje = document.getElementById("mensajeListado");
@@ -37,10 +61,6 @@ async function cargarListado() {
 
         // Guardar la posición original para mantener el orden
         // cuando no exista fecha de incorporación.
-        todasLasCamisetas.forEach((camiseta, indice) => {
-            camiseta._ordenOriginal = indice;
-        });
-
         todasLasCamisetas.forEach((camiseta, indice) => {
             camiseta._ordenOriginal = indice;
         });
@@ -187,16 +207,28 @@ function ordenarCamisetas(camisetas) {
         switch (criterioOrden) {
 
             case "equipoAnio":
-				// Primero, equipos de la A a la Z.
+
+				// 1. Equipos de la A a la Z.
 				resultado = String(a.nombre || "").localeCompare(
-					String(b.nombre || ""), "es", { sensitivity: "base" }
+					String(b.nombre || ""),
+					"es",
+					{ sensitivity: "base" }
 				);
 
-				if (resultado === 0) {
-					// Dentro de cada equipo, primero los años más antiguos.
-					resultado = (Number(a.anio) || 0) - (Number(b.anio) || 0);
-					return resultado * direccionOrden;
-				}
+				if (resultado !== 0) break;
+
+				// 2. Dentro de cada equipo, años más antiguos primero.
+				resultado =
+					(Number(a.anio) || 0) -
+					(Number(b.anio) || 0);
+
+				if (resultado !== 0) break;
+
+				// 3. Dentro del mismo equipo y año, prioridad del modelo.
+				resultado =
+					obtenerPrioridadModelo(a.modelo) -
+					obtenerPrioridadModelo(b.modelo);
+
 				break;
 
             case "fecha": {
