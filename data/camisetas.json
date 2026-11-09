@@ -12,6 +12,9 @@
         "jugador": "",
         "dorsal": "",
         "descripcion": "",
+        "fotos": [
+            "000001_foto1.webp"
+        ],
         "fotoFrontal": "000001_foto1.webp",
         "fotoTrasera": ""
     },
@@ -28,6 +31,10 @@
         "jugador": "",
         "dorsal": "14",
         "descripcion": "",
+        "fotos": [
+            "000002_foto1.webp",
+            "000002_foto2.webp"
+        ],
         "fotoFrontal": "000002_foto1.webp",
         "fotoTrasera": "000002_foto2.webp"
     },
@@ -44,6 +51,9 @@
         "jugador": "",
         "dorsal": "",
         "descripcion": "",
+        "fotos": [
+            "000003_foto1.webp"
+        ],
         "fotoFrontal": "000003_foto1.webp",
         "fotoTrasera": ""
     },
@@ -60,6 +70,10 @@
         "jugador": "Fernando Martín",
         "dorsal": "10",
         "descripcion": "",
+        "fotos": [
+            "000004_foto1.webp",
+            "000004_foto2.webp"
+        ],
         "fotoFrontal": "000004_foto1.webp",
         "fotoTrasera": "000004_foto2.webp"
     },
@@ -76,6 +90,9 @@
         "jugador": "",
         "dorsal": "",
         "descripcion": "",
+        "fotos": [
+            "000005_foto1.webp"
+        ],
         "fotoFrontal": "000005_foto1.webp",
         "fotoTrasera": ""
     },
@@ -92,6 +109,9 @@
         "jugador": "",
         "dorsal": "",
         "descripcion": "",
+        "fotos": [
+            "000006_foto1.webp"
+        ],
         "fotoFrontal": "000006_foto1.webp",
         "fotoTrasera": ""
     },
@@ -108,6 +128,9 @@
         "jugador": "",
         "dorsal": "",
         "descripcion": "",
+        "fotos": [
+            "000007_foto1.webp"
+        ],
         "fotoFrontal": "000007_foto1.webp",
         "fotoTrasera": ""
     },
@@ -124,6 +147,9 @@
         "jugador": "",
         "dorsal": "",
         "descripcion": "",
+        "fotos": [
+            "000008_foto1.webp"
+        ],
         "fotoFrontal": "000008_foto1.webp",
         "fotoTrasera": ""
     },
@@ -140,6 +166,9 @@
         "jugador": "",
         "dorsal": "",
         "descripcion": "",
+        "fotos": [
+            "000009_foto1.webp"
+        ],
         "fotoFrontal": "000009_foto1.webp",
         "fotoTrasera": ""
     },
@@ -156,6 +185,12 @@
         "jugador": "",
         "dorsal": "1",
         "descripcion": "",
+        "fotos": [
+            "000010_foto1.webp",
+            "000010_foto2.webp",
+            "000010_foto3.webp",
+            "000010_foto4.webp"
+        ],
         "fotoFrontal": "000010_foto1.webp",
         "fotoTrasera": "000010_foto2.webp"
     },
@@ -172,6 +207,9 @@
         "jugador": "",
         "dorsal": "",
         "descripcion": "",
+        "fotos": [
+            "000011_foto1.webp"
+        ],
         "fotoFrontal": "000011_foto1.webp",
         "fotoTrasera": ""
     },
@@ -188,6 +226,9 @@
         "jugador": "",
         "dorsal": "",
         "descripcion": "",
+        "fotos": [
+            "000012_foto1.webp"
+        ],
         "fotoFrontal": "000012_foto1.webp",
         "fotoTrasera": ""
     },
@@ -204,6 +245,10 @@
         "jugador": "Diego Herrero",
         "dorsal": "14",
         "descripcion": "",
+        "fotos": [
+            "000013_foto1.webp",
+            "000013_foto2.webp"
+        ],
         "fotoFrontal": "000013_foto1.webp",
         "fotoTrasera": "000013_foto2.webp"
     },
@@ -220,6 +265,9 @@
         "jugador": "",
         "dorsal": "",
         "descripcion": "",
+        "fotos": [
+            "000014_foto1.webp"
+        ],
         "fotoFrontal": "000014_foto1.webp",
         "fotoTrasera": ""
     },
@@ -236,6 +284,9 @@
         "jugador": "",
         "dorsal": "",
         "descripcion": "",
+        "fotos": [
+            "000015_foto1.webp"
+        ],
         "fotoFrontal": "000015_foto1.webp",
         "fotoTrasera": ""
     },
@@ -252,6 +303,9 @@
         "jugador": "",
         "dorsal": "",
         "descripcion": "",
+        "fotos": [
+            "000016_foto1.webp"
+        ],
         "fotoFrontal": "000016_foto1.webp",
         "fotoTrasera": ""
     },
@@ -268,7 +322,49 @@
         "jugador": "",
         "dorsal": "",
         "descripcion": "",
+        "fotos": [
+            "000017_foto1.webp"
+        ],
         "fotoFrontal": "000017_foto1.webp",
+        "fotoTrasera": ""
+    },
+    {
+        "id": 18,
+        "fechaAlta": "2026-11-09",
+        "deporte": "Rugby",
+        "caracter": "Selección",
+        "pais": "España",
+        "nombre": "Seleccion Española",
+        "anio": 2016,
+        "marca": "O'Neills",
+        "modelo": "Visitante",
+        "jugador": "",
+        "dorsal": "2",
+        "descripcion": "",
+        "fotos": [
+            "000018_foto1.webp",
+            "000018_foto2.webp"
+        ],
+        "fotoFrontal": "000018_foto1.webp",
+        "fotoTrasera": "000018_foto2.webp"
+    },
+    {
+        "id": 19,
+        "fechaAlta": "2026-11-09",
+        "deporte": "Fútbol",
+        "caracter": "Club",
+        "pais": "España",
+        "nombre": "Real Madrid",
+        "anio": 2025,
+        "marca": "Adidas",
+        "modelo": "Especial",
+        "jugador": "",
+        "dorsal": "",
+        "descripcion": "",
+        "fotos": [
+            "000019_foto1.webp"
+        ],
+        "fotoFrontal": "000019_foto1.webp",
         "fotoTrasera": ""
     }
 ]
