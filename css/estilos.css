@@ -470,3 +470,27 @@ button:hover, .boton-secundario:hover { filter: brightness(1.15); }
         margin: 0 15px 15px;
     }
 }
+
+
+/* Tarjetas del listado: solo título y acciones, sin metadatos */
+.tarjeta-camiseta .datos-camiseta {
+    padding: 14px 16px;
+}
+
+.tarjeta-camiseta .datos-camiseta h3 {
+    margin: 0;
+    line-height: 1.35;
+    overflow-wrap: anywhere;
+}
+
+.galeria-camisetas.vista-listado .tarjeta-camiseta .datos-camiseta {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+@media (max-width: 600px) {
+    .galeria-camisetas.vista-listado .tarjeta-camiseta .datos-camiseta {
+        padding: 12px 14px;
+    }
+}
