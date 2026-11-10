@@ -187,28 +187,31 @@ function dibujarGraficoDeporte(datos, contenedor) {
 
     tarjeta.appendChild(cabecera);
 
+    
     // Gráfico circular.
     const contenidoGrafico = document.createElement("div");
     contenidoGrafico.className = "contenido-deporte";
 
-    const enlaceGrafico = document.createElement("a");
-    enlaceGrafico.className = "enlace-icono-deporte";
-    enlaceGrafico.href =
+    const grafico = document.createElement("div");
+    grafico.className = "grafico-donut";
+
+    // Icono central: único elemento clicable del gráfico.
+    const enlaceIcono = document.createElement("a");
+    enlaceIcono.className = "enlace-icono-deporte";
+    enlaceIcono.href =
         `listado.html?deporte=${encodeURIComponent(deporte)}`;
 
-    enlaceGrafico.setAttribute(
+    enlaceIcono.setAttribute(
         "aria-label",
         `Ver todas las camisetas de ${deporte}`
     );
-
-    const grafico = document.createElement("div");
-    grafico.className = "grafico-donut";
 
     const icono = document.createElement("span");
     icono.className = "icono-deporte";
     icono.textContent = obtenerIconoDeporte(deporte);
 
-    grafico.appendChild(icono);
+    enlaceIcono.appendChild(icono);
+    grafico.appendChild(enlaceIcono);
 
     // Calcular los segmentos del gráfico.
     let acumulado = 0;
@@ -232,10 +235,9 @@ function dibujarGraficoDeporte(datos, contenedor) {
     grafico.style.background =
         `conic-gradient(${segmentos.join(", ")})`;
 
-    enlaceGrafico.appendChild(grafico);
-    contenidoGrafico.appendChild(enlaceGrafico);
-
+    contenidoGrafico.appendChild(grafico);
     tarjeta.appendChild(contenidoGrafico);
+
 
     // Listado completo de equipos.
     const listaEquipos = document.createElement("div");

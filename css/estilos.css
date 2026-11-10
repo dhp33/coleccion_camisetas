@@ -196,8 +196,17 @@ button:hover, .boton-secundario:hover { filter: brightness(1.15); }
     align-self: stretch;
 }
 
+
 .enlace-icono-deporte {
-    display: inline-block;
+    position: absolute;
+    width: 58%;
+    height: 58%;
+    top: 21%;
+    left: 21%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
     border-radius: 50%;
     text-decoration: none;
     transition: transform 0.2s;
@@ -206,6 +215,7 @@ button:hover, .boton-secundario:hover { filter: brightness(1.15); }
 .enlace-icono-deporte:hover {
     transform: scale(1.05);
 }
+
 
 .grafico-donut {
     position: relative;
