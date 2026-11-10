@@ -60,73 +60,213 @@ button:hover, .boton-secundario:hover { filter: brightness(1.15); }
 /* =====================================================
    PORTADA PÚBLICA
    ===================================================== */
+
 .portada {
-    max-width: 1050px;
-    margin: 45px auto;
+    max-width: 1150px;
+    margin: 30px auto;
     padding: 0 20px;
 }
+
 .portada-intro {
     text-align: center;
-    margin: 10px auto 35px;
+    margin: 10px auto 25px;
 }
-.portada-intro h2 { font-size: clamp(1.7rem, 4vw, 2.5rem); margin-bottom: 8px; }
-.portada-intro p { color: var(--secondary); }
-.acciones-publicas {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    max-width: 600px;
-    margin: 0 auto 35px;
+
+.portada-intro h2 {
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    margin-bottom: 5px;
 }
-.accion-publica {
-    display: block;
-    padding: 28px;
-    text-align: center;
-    text-decoration: none;
-    border-radius: 12px;
-    background: var(--panel);
-    border: 1px solid var(--border);
-    box-shadow: 0 3px 12px rgba(0,0,0,.2);
-    transition: transform .2s, background .2s;
+
+.portada-intro p {
+    color: var(--secondary);
 }
-.accion-publica:hover { transform: translateY(-3px); background: var(--panel-hover); }
-.accion-publica h3 { font-size: 1.35rem; margin-bottom: 7px; }
-.accion-publica p { color: var(--secondary); }
+
+/* Distribución principal */
 
 .estadisticas-publicas {
     display: grid;
     grid-template-columns: 210px minmax(0, 1fr);
-    gap: 22px;
-    margin: 0 auto 30px;
+    gap: 18px;
+    align-items: stretch;
+    margin: 0 auto 20px;
 }
-.stat-total, .grafico-card {
-    padding: 22px;
+
+/* Contador y acceso al catálogo */
+
+.stat-total,
+.grafico-card {
+    padding: 20px;
     text-align: center;
     border: 1px solid var(--border);
     border-radius: 12px;
     background: var(--panel);
 }
-.stat-total { display: flex; flex-direction: column; justify-content: center; }
-.stat-total strong { color: var(--accent); font-size: 3.4rem; line-height: 1.1; }
-.stat-total span { margin-top: 8px; color: var(--secondary); }
-.grafico-card h2 { margin-bottom: 18px; font-size: 1.1rem; }
-.distribucion { display: flex; align-items: center; justify-content: center; gap: 30px; }
+
+.stat-total {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.stat-total strong {
+    color: var(--accent);
+    font-size: 3.2rem;
+    line-height: 1.1;
+}
+
+.stat-total span {
+    color: var(--secondary);
+    font-size: 0.9rem;
+}
+
+/* Botón discreto de explorar */
+
+.boton-explorar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 12px;
+    padding: 9px 15px;
+    border-radius: 7px;
+    background: var(--accent);
+    color: white;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: filter 0.2s, transform 0.2s;
+}
+
+.boton-explorar:hover {
+    filter: brightness(1.2);
+    transform: translateY(-2px);
+}
+
+/* Gráfico de distribución */
+
+.grafico-card {
+    min-width: 0;
+}
+
+.grafico-card h2 {
+    margin-bottom: 15px;
+    font-size: 1.05rem;
+}
+
+.distribucion {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
 .grafico-donut {
-    width: 180px; height: 180px; flex: 0 0 180px;
-    border-radius: 50%; position: relative; background: #555;
+    width: 170px;
+    height: 170px;
+    flex: 0 0 170px;
+    border-radius: 50%;
+    position: relative;
+    background: #555;
 }
+
 .grafico-donut::after {
-    content: ""; position: absolute; width: 58%; height: 58%;
-    top: 21%; left: 21%; border-radius: 50%; background: var(--panel);
+    content: "";
+    position: absolute;
+    width: 58%;
+    height: 58%;
+    top: 21%;
+    left: 21%;
+    border-radius: 50%;
+    background: var(--panel);
 }
+
 .leyenda-grafico {
-    display: flex; flex-direction: column; gap: 8px;
-    max-height: 185px; min-width: 180px; overflow-y: auto; text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    max-height: 180px;
+    min-width: 180px;
+    overflow-y: auto;
+    text-align: left;
 }
-.elemento-leyenda { display: flex; align-items: center; gap: 8px; font-size: .88rem; }
-.color-leyenda { width: 11px; height: 11px; min-width: 11px; border-radius: 3px; }
-.cantidad-leyenda { margin-left: auto; padding-left: 8px; font-weight: 700; }
-.grafico-vacio { color: var(--secondary); font-size: .9rem; }
-.estado-carga { text-align: center; color: var(--secondary); margin-top: 15px; }
+
+.elemento-leyenda {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.88rem;
+}
+
+.color-leyenda {
+    width: 11px;
+    height: 11px;
+    min-width: 11px;
+    border-radius: 3px;
+}
+
+.cantidad-leyenda {
+    margin-left: auto;
+    padding-left: 8px;
+    font-weight: 700;
+}
+
+.grafico-vacio {
+    color: var(--secondary);
+    font-size: 0.9rem;
+}
+
+.estado-carga {
+    text-align: center;
+    color: var(--secondary);
+    margin-top: 12px;
+}
+
+/* Adaptación a pantallas pequeñas */
+
+@media (max-width: 700px) {
+    .estadisticas-publicas {
+        grid-template-columns: 1fr;
+    }
+
+    .stat-total {
+        padding: 16px;
+    }
+
+    .stat-total strong {
+        font-size: 2.7rem;
+    }
+
+    .distribucion {
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    .leyenda-grafico {
+        width: 100%;
+        max-height: 180px;
+    }
+}
+
+@media (max-width: 500px) {
+    .portada {
+        margin: 25px auto;
+    }
+
+    .portada-intro {
+        margin-bottom: 20px;
+    }
+
+    .grafico-card {
+        padding: 16px;
+    }
+
+    .grafico-donut {
+        width: 155px;
+        height: 155px;
+        flex-basis: 155px;
+    }
+}
 
 /* =====================================================
    LISTADO PÚBLICO
