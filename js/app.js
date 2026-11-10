@@ -1,82 +1,271 @@
 document.addEventListener("DOMContentLoaded", cargarEstadisticas);
 
+
 async function cargarEstadisticas() {
+
     const totalElemento = document.getElementById("totalCamisetas");
-    const grafico = document.getElementById("graficoEquipos");
-    const leyenda = document.getElementById("leyendaEquipos");
+    const contenedor = document.getElementById("estadisticasDeportes");
     const estado = document.getElementById("estadoCarga");
 
     try {
-        const respuesta = await fetch("data/camisetas.json", { cache: "no-store" });
-        if (!respuesta.ok) throw new Error("No se ha podido cargar la colección.");
+
+        const respuesta = await fetch("data/camisetas.json", {
+            cache: "no-store"
+        });
+
+        if (!respuesta.ok) {
+            throw new Error("No se ha podido cargar la colección.");
+        }
 
         const camisetas = await respuesta.json();
-        if (!Array.isArray(camisetas)) throw new Error("El archivo de colección no es válido.");
+
+        if (!Array.isArray(camisetas)) {
+            throw new Error("El archivo de colección no es válido.");
+        }
 
         totalElemento.textContent = camisetas.length;
 
-        const equipos = {};
+        if (estado) {
+            estado.textContent = "";
+        }
+
+        contenedor.innerHTML = "";
+
+        if (camisetas.length === 0) {
+
+            const mensaje = document.createElement("p");
+            mensaje.className = "mensaje-estadisticas";
+            mensaje.textContent = "Todavía no hay camisetas registradas.";
+
+            contenedor.appendChild(mensaje);
+            return;
+        }
+
+        // Agrupar por deporte y después por equipo.
+        const deportes = {};
+
         camisetas.forEach(camiseta => {
-            const nombre = String(camiseta.nombre || "").trim() || "Sin equipo indicado";
-            equipos[nombre] = (equipos[nombre] || 0) + 1;
+
+            const deporte = String(
+                camiseta.deporte || "Sin deporte indicado"
+            ).trim();
+
+            const equipo = String(
+                camiseta.nombre || "Sin equipo indicado"
+            ).trim();
+
+            if (!deportes[deporte]) {
+                deportes[deporte] = {};
+            }
+
+            deportes[deporte][equipo] =
+                (deportes[deporte][equipo] || 0) + 1;
+
         });
 
-        const distribucion = Object.entries(equipos).sort((a, b) => b[1] - a[1]);
-        dibujarGrafico(distribucion, camisetas.length);
+        // Ordenar deportes por cantidad total.
+        const distribucionDeportes = Object.entries(deportes)
+            .map(([deporte, equipos]) => {
 
-        if (estado) estado.textContent = "";
+                const distribucionEquipos = Object.entries(equipos)
+                    .sort((a, b) =>
+                        b[1] - a[1] ||
+                        a[0].localeCompare(b[0], "es")
+                    );
+
+                const totalDeporte = distribucionEquipos.reduce(
+                    (total, equipo) => total + equipo[1],
+                    0
+                );
+
+                return {
+                    deporte,
+                    equipos: distribucionEquipos,
+                    total: totalDeporte
+                };
+
+            })
+            .sort((a, b) =>
+                b.total - a.total ||
+                a.deporte.localeCompare(b.deporte, "es")
+            );
+
+        // Crear una tarjeta por deporte.
+        distribucionDeportes.forEach(datosDeporte => {
+            dibujarGraficoDeporte(datosDeporte, contenedor);
+        });
+
     } catch (error) {
+
         console.error("Error cargando estadísticas:", error);
+
+        if (estado) {
+            estado.textContent = "No se ha podido cargar la colección";
+        }
+
         totalElemento.textContent = "—";
-        grafico.style.background = "#555";
-        leyenda.textContent = "Estadísticas no disponibles.";
-        if (estado) estado.textContent = error.message;
+        contenedor.innerHTML = "";
+
+        const mensaje = document.createElement("p");
+        mensaje.className = "mensaje-estadisticas";
+        mensaje.textContent = error.message || "No hay datos disponibles.";
+
+        contenedor.appendChild(mensaje);
     }
 }
 
-function dibujarGrafico(distribucion, total) {
-    const grafico = document.getElementById("graficoEquipos");
-    const leyenda = document.getElementById("leyendaEquipos");
 
-    if (!total || !distribucion.length) {
-        grafico.style.background = "#555";
-        leyenda.textContent = "Todavía no hay camisetas registradas.";
-        return;
-    }
+// Obtener el icono correspondiente a cada deporte.
+function obtenerIconoDeporte(deporte) {
+
+    const nombre = String(deporte || "")
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .trim();
+
+    const iconos = {
+        "futbol": "⚽",
+        "rugby": "🏉",
+        "baloncesto": "🏀",
+        "basket": "🏀",
+        "balonmano": "🤾",
+        "voleibol": "🏐",
+        "tenis": "🎾",
+        "golf": "⛳",
+        "beisbol": "⚾",
+        "hockey": "🏑",
+        "ciclismo": "🚴",
+        "formula 1": "🏎️",
+        "automovilismo": "🏎️"
+    };
+
+    return iconos[nombre] || "🏅";
+}
+
+
+// Crear la tarjeta estadística de un deporte.
+function dibujarGraficoDeporte(datos, contenedor) {
+
+    const { deporte, equipos, total } = datos;
 
     const colores = [
-        "#7651a8", "#d64b4b", "#3976bd", "#299b78",
-        "#d69b32", "#bd5d9b", "#548d9c", "#8b9b43",
-        "#d47739", "#7770bd", "#a85c52", "#548d57"
+        "#7651a8",
+        "#d64b4b",
+        "#3976bd",
+        "#299b78",
+        "#d69b32",
+        "#bd5d9b",
+        "#548d9c",
+        "#8b9b43",
+        "#d47739",
+        "#7770bd",
+        "#a85c52",
+        "#548d57"
     ];
 
+    const tarjeta = document.createElement("article");
+    tarjeta.className = "deporte-card";
+
+    // Cabecera.
+    const cabecera = document.createElement("div");
+    cabecera.className = "cabecera-deporte";
+
+    const enlaceDeporte = document.createElement("a");
+    enlaceDeporte.className = "enlace-deporte";
+    enlaceDeporte.href =
+        `listado.html?deporte=${encodeURIComponent(deporte)}`;
+    enlaceDeporte.textContent = deporte;
+
+    const resumen = document.createElement("span");
+    resumen.className = "resumen-deporte";
+    resumen.textContent =
+        `${total} ${total === 1 ? "camiseta" : "camisetas"}`;
+
+    cabecera.appendChild(enlaceDeporte);
+    cabecera.appendChild(resumen);
+
+    tarjeta.appendChild(cabecera);
+
+    // Gráfico circular.
+    const contenidoGrafico = document.createElement("div");
+    contenidoGrafico.className = "contenido-deporte";
+
+    const enlaceGrafico = document.createElement("a");
+    enlaceGrafico.className = "enlace-icono-deporte";
+    enlaceGrafico.href =
+        `listado.html?deporte=${encodeURIComponent(deporte)}`;
+
+    enlaceGrafico.setAttribute(
+        "aria-label",
+        `Ver todas las camisetas de ${deporte}`
+    );
+
+    const grafico = document.createElement("div");
+    grafico.className = "grafico-donut";
+
+    const icono = document.createElement("span");
+    icono.className = "icono-deporte";
+    icono.textContent = obtenerIconoDeporte(deporte);
+
+    grafico.appendChild(icono);
+
+    // Calcular los segmentos del gráfico.
     let acumulado = 0;
     const segmentos = [];
-    leyenda.replaceChildren();
 
-    distribucion.forEach(([nombre, cantidad], indice) => {
+    equipos.forEach(([nombre, cantidad], indice) => {
+
+        const porcentaje = (cantidad / total) * 100;
+
         const inicio = acumulado;
-        acumulado += cantidad / total * 100;
+        acumulado += porcentaje;
+
         const color = colores[indice % colores.length];
-        segmentos.push(`${color} ${inicio}% ${acumulado}%`);
 
-        const elemento = document.createElement("div");
-        elemento.className = "elemento-leyenda";
+        segmentos.push(
+            `${color} ${inicio}% ${acumulado}%`
+        );
 
-        const indicador = document.createElement("span");
-        indicador.className = "color-leyenda";
-        indicador.style.backgroundColor = color;
-
-        const texto = document.createElement("span");
-        texto.textContent = nombre;
-
-        const numero = document.createElement("span");
-        numero.className = "cantidad-leyenda";
-        numero.textContent = cantidad;
-
-        elemento.append(indicador, texto, numero);
-        leyenda.appendChild(elemento);
     });
 
-    grafico.style.background = `conic-gradient(${segmentos.join(", ")})`;
+    grafico.style.background =
+        `conic-gradient(${segmentos.join(", ")})`;
+
+    enlaceGrafico.appendChild(grafico);
+    contenidoGrafico.appendChild(enlaceGrafico);
+
+    tarjeta.appendChild(contenidoGrafico);
+
+    // Listado completo de equipos.
+    const listaEquipos = document.createElement("div");
+    listaEquipos.className = "lista-equipos";
+
+    equipos.forEach(([nombre, cantidad]) => {
+
+        const fila = document.createElement("div");
+        fila.className = "equipo-estadistica";
+
+        const enlaceEquipo = document.createElement("a");
+        enlaceEquipo.className = "enlace-equipo";
+
+        enlaceEquipo.href =
+            `listado.html?deporte=${encodeURIComponent(deporte)}` +
+            `&equipo=${encodeURIComponent(nombre)}`;
+
+        enlaceEquipo.textContent = nombre;
+
+        const cantidadEquipo = document.createElement("span");
+        cantidadEquipo.className = "cantidad-equipo";
+        cantidadEquipo.textContent = cantidad;
+
+        fila.appendChild(enlaceEquipo);
+        fila.appendChild(cantidadEquipo);
+
+        listaEquipos.appendChild(fila);
+
+    });
+
+    tarjeta.appendChild(listaEquipos);
+    contenedor.appendChild(tarjeta);
 }

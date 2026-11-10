@@ -11,41 +11,27 @@
 
     <header>
         <h1>⚽ Colección de Camisetas</h1>
-        <p>Catálogo personal de camisetas deportivas</p>
     </header>
 
     <main class="portada">
 
-        <section class="portada-intro">
-            <h2>Mi colección</h2>
-            <p>Un recorrido por las camisetas que forman parte de la colección.</p>
-        </section>
-
-        <section class="estadisticas-publicas">
+        <section class="acceso-coleccion">
 
             <div class="stat-total">
                 <strong id="totalCamisetas">0</strong>
                 <span>Camisetas registradas</span>
-
-                <a href="listado.html" class="boton-explorar">
-                    📋 Explorar colección
-                </a>
             </div>
 
-            <div class="grafico-card">
-                <h2>Camisetas por equipo o selección</h2>
+            <a href="listado.html" class="boton-explorar">
+                📋 Explorar colección
+            </a>
 
-                <div class="distribucion">
-                    <div id="graficoEquipos" class="grafico-donut"
-                         role="img"
-                         aria-label="Distribución de camisetas por equipo"></div>
+        </section>
 
-                    <div id="leyendaEquipos" class="leyenda-grafico">
-                        <span class="grafico-vacio">Cargando colección...</span>
-                    </div>
-                </div>
+        <section class="estadisticas-publicas">
+            <div id="estadisticasDeportes" class="estadisticas-deportes">
+                <p class="mensaje-estadisticas">Cargando estadísticas...</p>
             </div>
-
         </section>
 
         <p id="estadoCarga" class="estado-carga"

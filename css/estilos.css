@@ -62,111 +62,151 @@ button:hover, .boton-secundario:hover { filter: brightness(1.15); }
    ===================================================== */
 
 .portada {
-    max-width: 1150px;
-    margin: 30px auto;
+    max-width: 1500px;
+    margin: 25px auto;
     padding: 0 20px;
 }
 
-.portada-intro {
-    text-align: center;
-    margin: 10px auto 25px;
-}
+/* Acceso a la colección y contador */
 
-.portada-intro h2 {
-    font-size: clamp(1.6rem, 3vw, 2.2rem);
-    margin-bottom: 5px;
-}
-
-.portada-intro p {
-    color: var(--secondary);
-}
-
-/* Distribución principal */
-
-.estadisticas-publicas {
-    display: grid;
-    grid-template-columns: 210px minmax(0, 1fr);
-    gap: 18px;
-    align-items: stretch;
-    margin: 0 auto 20px;
-}
-
-/* Contador y acceso al catálogo */
-
-.stat-total,
-.grafico-card {
-    padding: 20px;
-    text-align: center;
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    background: var(--panel);
+.acceso-coleccion {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
 }
 
 .stat-total {
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 8px;
+    gap: 10px;
+    width: 210px;
+    min-height: 54px;
+    padding: 8px 14px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--panel);
 }
 
 .stat-total strong {
     color: var(--accent);
-    font-size: 3.2rem;
-    line-height: 1.1;
+    font-size: 1.8rem;
 }
 
 .stat-total span {
     color: var(--secondary);
-    font-size: 0.9rem;
+    font-size: 0.78rem;
 }
 
-/* Botón discreto de explorar */
+/* Botón explorar */
 
 .boton-explorar {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    margin-top: 12px;
-    padding: 9px 15px;
-    border-radius: 7px;
-    background: var(--accent);
-    color: white;
+    width: 230px;
+    min-height: 54px;
+    padding: 10px 16px;
+    background: var(--panel);
+    color: var(--text);
+    border: 1px solid #444;
+    border-radius: 8px;
     text-decoration: none;
-    font-size: 0.85rem;
+    font-size: 0.95rem;
     font-weight: 600;
-    transition: filter 0.2s, transform 0.2s;
+    transition: background 0.2s, border-color 0.2s;
 }
 
 .boton-explorar:hover {
-    filter: brightness(1.2);
-    transform: translateY(-2px);
+    background: var(--panel-hover);
+    border-color: var(--accent);
 }
 
-/* Gráfico de distribución */
+/* Estadísticas por deporte */
 
-.grafico-card {
+.estadisticas-publicas {
+    margin-bottom: 25px;
+}
+
+.estadisticas-deportes {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+    align-items: stretch;
+}
+
+/* Tarjetas deportivas */
+
+.deporte-card {
+    display: grid;
+    grid-template-columns: 95px minmax(0, 1fr);
+    grid-template-areas:
+        "cabecera cabecera"
+        "grafico equipos";
+    grid-template-rows: auto minmax(145px, 1fr);
+    gap: 10px 14px;
     min-width: 0;
+    padding: 16px;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 12px;
 }
 
-.grafico-card h2 {
-    margin-bottom: 15px;
-    font-size: 1.05rem;
-}
-
-.distribucion {
+.cabecera-deporte {
+    grid-area: cabecera;
     display: flex;
+    justify-content: space-between;
     align-items: center;
+    gap: 8px;
+    margin-bottom: 5px;
+}
+
+.enlace-deporte {
+    color: var(--text);
+    text-decoration: none;
+    font-size: 1.05rem;
+    font-weight: 700;
+}
+
+.enlace-deporte:hover {
+    color: var(--accent);
+}
+
+.resumen-deporte {
+    color: var(--secondary);
+    font-size: 0.8rem;
+    white-space: nowrap;
+}
+
+/* Gráfico circular */
+
+.contenido-deporte {
+    grid-area: grafico;
+    display: flex;
     justify-content: center;
-    gap: 30px;
+    align-items: center;
+    padding: 0;
+    align-self: stretch;
+}
+
+.enlace-icono-deporte {
+    display: inline-block;
+    border-radius: 50%;
+    text-decoration: none;
+    transition: transform 0.2s;
+}
+
+.enlace-icono-deporte:hover {
+    transform: scale(1.05);
 }
 
 .grafico-donut {
-    width: 170px;
-    height: 170px;
-    flex: 0 0 170px;
-    border-radius: 50%;
     position: relative;
+    width: 90px;
+    height: 90px;
+    flex-shrink: 0;
+    border-radius: 50%;
     background: #555;
 }
 
@@ -181,39 +221,69 @@ button:hover, .boton-secundario:hover { filter: brightness(1.15); }
     background: var(--panel);
 }
 
-.leyenda-grafico {
+.icono-deporte {
+    position: absolute;
+    z-index: 1;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.7rem;
+    pointer-events: none;
+}
+
+/* Listado de equipos */
+
+.lista-equipos {
+    grid-area: equipos;
+    min-width: 0;
+    align-self: stretch;
     display: flex;
     flex-direction: column;
-    gap: 8px;
-    max-height: 180px;
-    min-width: 180px;
-    overflow-y: auto;
-    text-align: left;
+    justify-content: center;
+    border-top: 1px solid var(--border);
 }
 
-.elemento-leyenda {
+.equipo-estadistica {
     display: flex;
     align-items: center;
-    gap: 8px;
-    font-size: 0.88rem;
+    justify-content: space-between;
+    gap: 6px;
+    padding: 6px 2px;
+    border-bottom: 1px solid var(--border);
 }
 
-.color-leyenda {
-    width: 11px;
-    height: 11px;
-    min-width: 11px;
-    border-radius: 3px;
+.enlace-equipo {
+    min-width: 0;
+    color: var(--text);
+    text-decoration: none;
+    font-size: 0.82rem;
+    overflow-wrap: anywhere;
 }
 
-.cantidad-leyenda {
-    margin-left: auto;
-    padding-left: 8px;
-    font-weight: 700;
+.enlace-equipo:hover {
+    color: var(--accent);
+    text-decoration: underline;
 }
 
-.grafico-vacio {
+.cantidad-equipo {
+    flex-shrink: 0;
     color: var(--secondary);
-    font-size: 0.9rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+/* Mensajes */
+
+.mensaje-estadisticas {
+    grid-column: 1 / -1;
+    padding: 20px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: var(--panel);
+    color: var(--secondary);
+    text-align: center;
 }
 
 .estado-carga {
@@ -222,49 +292,60 @@ button:hover, .boton-secundario:hover { filter: brightness(1.15); }
     margin-top: 12px;
 }
 
-/* Adaptación a pantallas pequeñas */
+/* Accesibilidad */
 
-@media (max-width: 700px) {
-    .estadisticas-publicas {
-        grid-template-columns: 1fr;
-    }
+.enlace-icono-deporte:focus-visible,
+.enlace-deporte:focus-visible,
+.enlace-equipo:focus-visible,
+.boton-explorar:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 4px;
+}
 
-    .stat-total {
-        padding: 16px;
-    }
+/* Pantallas medianas */
 
-    .stat-total strong {
-        font-size: 2.7rem;
-    }
-
-    .distribucion {
-        flex-direction: column;
-        gap: 18px;
-    }
-
-    .leyenda-grafico {
-        width: 100%;
-        max-height: 180px;
+@media (max-width: 1050px) {
+    .estadisticas-deportes {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
 
-@media (max-width: 500px) {
-    .portada {
-        margin: 25px auto;
+/* Móviles */
+
+@media (max-width: 700px) {
+
+    .estadisticas-deportes {
+        grid-template-columns: 1fr;
     }
 
-    .portada-intro {
-        margin-bottom: 20px;
+    .deporte-card {
+        padding: 18px;
     }
 
-    .grafico-card {
-        padding: 16px;
+    .acceso-coleccion {
+        flex-wrap: wrap;
     }
 
-    .grafico-donut {
-        width: 155px;
-        height: 155px;
-        flex-basis: 155px;
+    .stat-total {
+        flex: 1;
+    }
+}
+
+@media (max-width: 400px) {
+
+    .acceso-coleccion {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .stat-total,
+    .boton-explorar {
+        width: 100%;
+    }
+
+    .cabecera-deporte {
+        align-items: flex-start;
+        flex-direction: column;
     }
 }
 
