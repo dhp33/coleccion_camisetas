@@ -723,3 +723,210 @@ button:hover, .boton-secundario:hover { filter: brightness(1.15); }
         padding: 12px 14px;
     }
 }
+
+
+/* =====================================================
+   FILTROS DESPLEGABLES
+   ===================================================== */
+
+.filtros-listado {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 20px 0;
+}
+
+.filtros-listado input {
+    flex: 1;
+    min-width: 0;
+}
+
+#abrirFiltros {
+    flex-shrink: 0;
+    padding: 12px 18px;
+    border-radius: 6px;
+    font-weight: 600;
+}
+
+/* Ventana modal */
+
+.modal-filtros {
+    width: min(450px, calc(100% - 30px));
+    margin: auto;
+    padding: 0;
+    color: var(--text);
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, .5);
+}
+
+.modal-filtros::backdrop {
+    background: rgba(0, 0, 0, .75);
+    backdrop-filter: blur(3px);
+}
+
+.contenido-modal-filtros {
+    padding: 22px;
+}
+
+.cabecera-modal-filtros {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 22px;
+}
+
+.cabecera-modal-filtros h2 {
+    font-size: 20px;
+}
+
+#cerrarFiltros {
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    background: #333;
+    border-radius: 6px;
+}
+
+.campos-modal-filtros {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.campos-modal-filtros label {
+    margin-top: 8px;
+    color: var(--secondary);
+    font-size: 14px;
+}
+
+.campos-modal-filtros select {
+    width: 100%;
+    padding: 11px;
+    color: white;
+    background: #222;
+    border: 1px solid #444;
+    border-radius: 6px;
+    font: inherit;
+}
+
+.acciones-modal-filtros {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.acciones-modal-filtros button {
+    flex: 1;
+    padding: 11px 14px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+#limpiarFiltrosModal {
+    background: #444;
+}
+
+/* =====================================================
+   AJUSTE DE TARJETAS Y BOTÓN VER FICHA
+   ===================================================== */
+
+.tarjeta-camiseta {
+    display: flex;
+    flex-direction: column;
+}
+
+.tarjeta-camiseta .enlace-tarjeta {
+    flex: 1;
+}
+
+.tarjeta-camiseta .datos-camiseta {
+    padding: 14px 16px;
+}
+
+.tarjeta-camiseta .datos-camiseta h3 {
+    line-height: 1.35;
+    overflow-wrap: anywhere;
+}
+
+.tarjeta-camiseta .boton-ver-ficha {
+    display: block;
+    width: calc(100% - 30px);
+    margin: 15px 15px 15px;
+    padding: 11px 14px;
+    text-align: center;
+    border-radius: 7px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/* Vista horizontal */
+
+.galeria-camisetas.vista-listado .tarjeta-camiseta {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+}
+
+.galeria-camisetas.vista-listado .enlace-tarjeta {
+    display: flex;
+    flex: 1;
+    min-width: 0;
+}
+
+.galeria-camisetas.vista-listado .boton-ver-ficha {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    flex: 0 0 145px;
+    width: auto;
+    margin: 15px;
+}
+
+@media (max-width: 600px) {
+
+    .filtros-listado {
+        align-items: stretch;
+    }
+
+    .filtros-listado input {
+        min-width: 0;
+    }
+
+    #abrirFiltros {
+        padding: 10px 12px;
+    }
+
+    .galeria-camisetas.vista-listado .tarjeta-camiseta {
+        flex-direction: column;
+    }
+
+    .galeria-camisetas.vista-listado .enlace-tarjeta {
+        flex-direction: column;
+    }
+
+    .galeria-camisetas.vista-listado .boton-ver-ficha {
+        flex: none;
+        width: calc(100% - 30px);
+        margin: 0 15px 15px;
+    }
+}
+
+@media (max-width: 380px) {
+
+    .filtros-listado {
+        flex-wrap: wrap;
+    }
+
+    .filtros-listado input {
+        flex-basis: 100%;
+    }
+
+    #abrirFiltros {
+        width: 100%;
+    }
+}

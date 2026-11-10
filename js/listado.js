@@ -74,6 +74,11 @@ async function cargarListado() {
 		const deporteURL = parametros.get("deporte") || "";
 		equipoURL = parametros.get("equipo") || "";
 
+		// Mostrar el equipo recibido en la caja de búsqueda.
+		if (equipoURL) {
+			document.getElementById("busqueda").value = equipoURL;
+		}
+
 		// Seleccionar el deporte correspondiente.
 		if (deporteURL) {
 			const filtroDeporte = document.getElementById("filtroDeporte");
@@ -145,14 +150,48 @@ function rellenarFiltro(id, textoInicial, propiedad) {
 
 function configurarFiltros() {
 
-    ["busqueda", "filtroDeporte", "filtroCaracter", "filtroPais", "filtroModelo"]
+    document.getElementById("busqueda")
+        .addEventListener("input", gestionarBusqueda);
+
+    ["filtroDeporte", "filtroCaracter", "filtroPais", "filtroModelo"]
         .forEach(id => {
-
-            const evento = id === "busqueda" ? "input" : "change";
-
             document.getElementById(id)
-                .addEventListener(evento, aplicarFiltros);
+                .addEventListener("change", aplicarFiltros);
         });
+
+    // Abrir ventana de filtros
+    const modalFiltros = document.getElementById("modalFiltros");
+
+    document.getElementById("abrirFiltros")
+        .addEventListener("click", () => {
+            modalFiltros.showModal();
+        });
+
+    // Cerrar desde la X
+    document.getElementById("cerrarFiltros")
+        .addEventListener("click", () => {
+            modalFiltros.close();
+        });
+
+    // Aplicar y cerrar
+    document.getElementById("aplicarFiltrosModal")
+        .addEventListener("click", () => {
+            aplicarFiltros();
+            modalFiltros.close();
+        });
+
+    // Limpiar filtros
+    document.getElementById("limpiarFiltrosModal")
+        .addEventListener("click", () => {
+            limpiarFiltros(false);
+        });
+
+    // Cerrar al pulsar fuera de la ventana
+    modalFiltros.addEventListener("click", event => {
+        if (event.target === modalFiltros) {
+            modalFiltros.close();
+        }
+    });
 
     // Ordenación
     document.getElementById("ordenarPor")
@@ -161,7 +200,6 @@ function configurarFiltros() {
             aplicarFiltros();
         });
 
-    // Dirección de ordenación
     document.getElementById("cambiarDireccion")
         .addEventListener("click", cambiarDireccionOrden);
 
@@ -172,9 +210,36 @@ function configurarFiltros() {
     document.getElementById("vistaListado")
         .addEventListener("click", () => cambiarVista("listado"));
 
-    // Limpiar
+    // Limpiar todos los filtros
     document.getElementById("limpiarFiltros")
         .addEventListener("click", limpiarFiltros);
+}
+
+// Gestionar la búsqueda sin alterar los demás filtros
+function gestionarBusqueda() {
+
+    const textoBusqueda = normalizar(
+        document.getElementById("busqueda").value
+    ).trim();
+
+    if (
+        equipoURL &&
+        textoBusqueda !== normalizar(equipoURL).trim()
+    ) {
+
+        equipoURL = "";
+
+        const parametros = new URLSearchParams(window.location.search);
+        parametros.delete("equipo");
+
+        const nuevaURL = parametros.toString()
+            ? `${window.location.pathname}?${parametros.toString()}`
+            : window.location.pathname;
+
+        window.history.replaceState({}, "", nuevaURL);
+    }
+
+    aplicarFiltros();
 }
 
 // =====================================================
@@ -191,6 +256,19 @@ function aplicarFiltros() {
     const caracter = document.getElementById("filtroCaracter").value;
     const pais = document.getElementById("filtroPais").value;
     const modelo = document.getElementById("filtroModelo").value;
+	
+    // Actualizar el indicador de filtros activos
+    const filtrosActivos = [
+        deporte,
+        caracter,
+        pais,
+        modelo
+    ].filter(Boolean).length;
+
+    document.getElementById("abrirFiltros").textContent =
+        filtrosActivos > 0
+            ? `⚙️ Filtrar (${filtrosActivos})`
+            : "⚙️ Filtrar";
 
     const filtradas = todasLasCamisetas.filter(camiseta => {
 
@@ -207,12 +285,12 @@ function aplicarFiltros() {
             camiseta.descripcion
         ].join(" "));
 
-		return (!busqueda || texto.includes(busqueda)) &&
-			(!deporte || camiseta.deporte === deporte) &&
-			(!equipoURL || normalizar(camiseta.nombre) === normalizar(equipoURL)) &&
-			(!caracter || camiseta.caracter === caracter) &&
-			(!pais || camiseta.pais === pais) &&
-			(!modelo || camiseta.modelo === modelo);
+	return (!busqueda || texto.includes(busqueda)) &&
+		(!deporte || camiseta.deporte === deporte) &&
+		(!equipoURL || normalizar(camiseta.nombre) === normalizar(equipoURL)) &&
+		(!caracter || camiseta.caracter === caracter) &&
+		(!pais || camiseta.pais === pais) &&
+		(!modelo || camiseta.modelo === modelo);
     });
 
     ordenarCamisetas(filtradas);
@@ -463,15 +541,25 @@ function mostrarCamisetas(camisetas) {
 // =====================================================
 // DATOS DE CADA CAMISETA
 // =====================================================
+function limpiarFiltros(cerrarModal = true) {
 
-function limpiarFiltros() {
-		
+    equipoURL = "";
+
+    const parametros = new URLSearchParams(window.location.search);
+    parametros.delete("equipo");
+    parametros.delete("deporte");
+
+    const nuevaURL = parametros.toString()
+        ? `${window.location.pathname}?${parametros.toString()}`
+        : window.location.pathname;
+
+    window.history.replaceState({}, "", nuevaURL);
+
     document.getElementById("busqueda").value = "";
     document.getElementById("filtroDeporte").value = "";
     document.getElementById("filtroCaracter").value = "";
     document.getElementById("filtroPais").value = "";
     document.getElementById("filtroModelo").value = "";
-	equipoURL = "";
 
     criterioOrden = "equipoAnio";
     direccionOrden = 1;
@@ -482,6 +570,12 @@ function limpiarFiltros() {
         "Ascendente ↑";
 
     aplicarFiltros();
+
+        const modal = document.getElementById("modalFiltros");
+
+    if (cerrarModal && modal.open) {
+        modal.close();
+    }
 }
 
 // Construir un título descriptivo a partir de los datos de la camiseta.

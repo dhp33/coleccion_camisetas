@@ -22,31 +22,74 @@
         <a href="index.html" class="boton-secundario">Volver al inicio</a>
     </div>
 
-    <section class="filtros-listado">
+<section class="filtros-listado">
 
-        <input
-            type="search"
-            id="busqueda"
-            placeholder="Buscar camiseta, jugador, marca..."
-            aria-label="Buscar camisetas">
+    <input
+        type="search"
+        id="busqueda"
+        placeholder="Buscar camiseta, jugador, marca..."
+        aria-label="Buscar camisetas">
 
-        <select id="filtroDeporte">
-            <option value="">Todos los deportes</option>
-        </select>
+    <button type="button" id="abrirFiltros">
+        ?? Filtrar
+    </button>
 
-        <select id="filtroCaracter">
-            <option value="">Club y selecciÃ³n</option>
-        </select>
+</section>
 
-        <select id="filtroPais">
-            <option value="">Todos los paÃ­ses</option>
-        </select>
+<dialog
+    id="modalFiltros"
+    class="modal-filtros"
+    aria-labelledby="tituloModalFiltros">
 
-        <select id="filtroModelo">
-            <option value="">Todos los modelos</option>
-        </select>
+    <div class="contenido-modal-filtros">
 
-    </section>
+        <div class="cabecera-modal-filtros">
+            <h2 id="tituloModalFiltros">Filtrar camisetas</h2>
+
+            <button type="button" id="cerrarFiltros" aria-label="Cerrar">
+                ?
+            </button>
+        </div>
+
+        <div class="campos-modal-filtros">
+
+            <label for="filtroDeporte">Deporte</label>
+            <select id="filtroDeporte">
+                <option value="">Todos los deportes</option>
+            </select>
+
+            <label for="filtroCaracter">Car¨¢cter</label>
+            <select id="filtroCaracter">
+                <option value="">Club y selecci¨®n</option>
+            </select>
+
+            <label for="filtroPais">Pa¨ªs</label>
+            <select id="filtroPais">
+                <option value="">Todos los pa¨ªses</option>
+            </select>
+
+            <label for="filtroModelo">Modelo</label>
+            <select id="filtroModelo">
+                <option value="">Todos los modelos</option>
+            </select>
+
+        </div>
+
+        <div class="acciones-modal-filtros">
+
+            <button type="button" id="limpiarFiltrosModal">
+                Limpiar
+            </button>
+
+            <button type="button" id="aplicarFiltrosModal">
+                Aplicar filtros
+            </button>
+
+        </div>
+
+    </div>
+
+</dialog>
 
     <div class="controles-listado">
 
@@ -68,7 +111,7 @@
             </select>
 
             <button type="button" id="cambiarDireccion">
-                Ascendente â†‘
+                Ascendente â†?
             </button>
 
             <div class="selector-vista">
@@ -80,7 +123,7 @@
                     aria-label="Vista de cuadrÃ­cula"
                     aria-pressed="true"
                     title="Vista de cuadrÃ­cula">
-                    â–¦
+                    â–?
                 </button>
 
                 <button
@@ -89,7 +132,7 @@
                     aria-label="Vista de listado"
                     aria-pressed="false"
                     title="Vista de listado">
-                    â˜°
+                    â˜?
                 </button>
 
             </div>
