@@ -71,55 +71,61 @@ button:hover, .boton-secundario:hover { filter: brightness(1.15); }
 
 .acceso-coleccion {
     display: flex;
+    justify-content: center;
     align-items: center;
-    gap: 12px;
-    margin-bottom: 20px;
+    gap: 22px;
+    width: fit-content;
+    max-width: 100%;
+    margin: 0 auto 25px;
+    padding: 12px 20px;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 12px;
 }
 
 .stat-total {
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 10px;
-    width: 210px;
+    gap: 12px;
+    width: auto;
     min-height: 54px;
-    padding: 8px 14px;
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    background: var(--panel);
+    padding: 0;
+    background: transparent;
+    border: none;
 }
 
 .stat-total strong {
+    font-size: 3rem;
+    line-height: 1;
     color: var(--accent);
-    font-size: 1.8rem;
+    font-weight: 800;
 }
 
 .stat-total span {
+    font-size: 0.95rem;
     color: var(--secondary);
-    font-size: 0.78rem;
+    white-space: nowrap;
 }
 
-/* Botón explorar */
-
 .boton-explorar {
-    display: inline-flex;
+    display: flex;
     align-items: center;
     justify-content: center;
-    width: 230px;
-    min-height: 54px;
-    padding: 10px 16px;
-    background: var(--panel);
-    color: var(--text);
-    border: 1px solid #444;
+    width: auto;
+    min-height: 46px;
+    padding: 0 20px;
+    background: var(--panel-hover);
+    border: 1px solid var(--border);
     border-radius: 8px;
+    color: var(--text);
     text-decoration: none;
-    font-size: 0.95rem;
     font-weight: 600;
+    white-space: nowrap;
     transition: background 0.2s, border-color 0.2s;
 }
 
 .boton-explorar:hover {
-    background: var(--panel-hover);
+    background: var(--accent);
     border-color: var(--accent);
 }
 
@@ -323,12 +329,13 @@ button:hover, .boton-secundario:hover { filter: brightness(1.15); }
     }
 
     .acceso-coleccion {
-        flex-wrap: wrap;
-    }
+		flex-wrap: wrap;
+		gap: 12px;
+	}
 
-    .stat-total {
-        flex: 1;
-    }
+	.stat-total {
+		flex: 0 1 auto;
+	}
 }
 
 @media (max-width: 400px) {

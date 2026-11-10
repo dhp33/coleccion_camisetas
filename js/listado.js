@@ -1,5 +1,6 @@
 
 let todasLasCamisetas = [];
+let equipoURL = "";
 
 let criterioOrden = "equipoAnio";
 let direccionOrden = 1;
@@ -66,8 +67,28 @@ async function cargarListado() {
         });
 
         prepararFiltros();
-        configurarFiltros();
-        aplicarFiltros();
+
+		// Leer los filtros enviados desde la portada.
+		const parametros = new URLSearchParams(window.location.search);
+
+		const deporteURL = parametros.get("deporte") || "";
+		equipoURL = parametros.get("equipo") || "";
+
+		// Seleccionar el deporte correspondiente.
+		if (deporteURL) {
+			const filtroDeporte = document.getElementById("filtroDeporte");
+
+			const opcion = [...filtroDeporte.options].find(opcion =>
+				normalizar(opcion.value) === normalizar(deporteURL)
+			);
+
+			if (opcion) {
+				filtroDeporte.value = opcion.value;
+			}
+		}
+
+		configurarFiltros();
+		aplicarFiltros();
 
         mensaje.textContent = "";
 
@@ -186,11 +207,12 @@ function aplicarFiltros() {
             camiseta.descripcion
         ].join(" "));
 
-        return (!busqueda || texto.includes(busqueda)) &&
-            (!deporte || camiseta.deporte === deporte) &&
-            (!caracter || camiseta.caracter === caracter) &&
-            (!pais || camiseta.pais === pais) &&
-            (!modelo || camiseta.modelo === modelo);
+		return (!busqueda || texto.includes(busqueda)) &&
+			(!deporte || camiseta.deporte === deporte) &&
+			(!equipoURL || normalizar(camiseta.nombre) === normalizar(equipoURL)) &&
+			(!caracter || camiseta.caracter === caracter) &&
+			(!pais || camiseta.pais === pais) &&
+			(!modelo || camiseta.modelo === modelo);
     });
 
     ordenarCamisetas(filtradas);
@@ -443,12 +465,13 @@ function mostrarCamisetas(camisetas) {
 // =====================================================
 
 function limpiarFiltros() {
-
+		
     document.getElementById("busqueda").value = "";
     document.getElementById("filtroDeporte").value = "";
     document.getElementById("filtroCaracter").value = "";
     document.getElementById("filtroPais").value = "";
     document.getElementById("filtroModelo").value = "";
+	equipoURL = "";
 
     criterioOrden = "equipoAnio";
     direccionOrden = 1;
