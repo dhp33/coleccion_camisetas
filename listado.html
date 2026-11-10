@@ -22,43 +22,40 @@
         <a href="index.html" class="boton-secundario">Volver al inicio</a>
     </div>
 
-<section class="filtros-listado">
-
+<!-- B¨²squeda, siempre visible -->
+<div class="barra-busqueda-listado">
     <input
         type="search"
         id="busqueda"
         placeholder="Buscar camiseta, jugador, marca..."
         aria-label="Buscar camisetas">
+</div>
 
-    <button type="button" id="abrirFiltros">
-        ?? Filtrar
-    </button>
-
-</section>
-
-<dialog
-    id="modalFiltros"
-    class="modal-filtros"
-    aria-labelledby="tituloModalFiltros">
+<!-- Ventana modal de filtros -->
+<dialog id="modalFiltros" class="modal-filtros">
 
     <div class="contenido-modal-filtros">
 
         <div class="cabecera-modal-filtros">
-            <h2 id="tituloModalFiltros">Filtrar camisetas</h2>
+            <h2>Filtrar camisetas</h2>
 
-            <button type="button" id="cerrarFiltros" aria-label="Cerrar">
+            <button
+                type="button"
+                id="cerrarFiltros"
+                class="cerrar-modal-filtros"
+                aria-label="Cerrar filtros">
                 ?
             </button>
         </div>
 
-        <div class="campos-modal-filtros">
+        <section class="filtros-listado">
 
             <label for="filtroDeporte">Deporte</label>
             <select id="filtroDeporte">
                 <option value="">Todos los deportes</option>
             </select>
 
-            <label for="filtroCaracter">Car¨¢cter</label>
+            <label for="filtroCaracter">Tipo</label>
             <select id="filtroCaracter">
                 <option value="">Club y selecci¨®n</option>
             </select>
@@ -73,16 +70,16 @@
                 <option value="">Todos los modelos</option>
             </select>
 
-        </div>
+        </section>
 
         <div class="acciones-modal-filtros">
 
             <button type="button" id="limpiarFiltrosModal">
-                Limpiar
+                Limpiar filtros
             </button>
 
             <button type="button" id="aplicarFiltrosModal">
-                Aplicar filtros
+                Cerrar
             </button>
 
         </div>
@@ -97,45 +94,53 @@
             Cargando colecciÃ³n...
         </p>
 
-        <div class="opciones-listado">
+<div class="opciones-listado">
 
-            <label for="ordenarPor">Ordenar por:</label>
+    <label for="ordenarPor">Ordenar por:</label>
 
-            <select id="ordenarPor">
-                <option value="equipoAnio">Equipo y aÃ±o</option>
-                <option value="fecha">Fecha de incorporaciÃ³n</option>
-                <option value="anio">AÃ±o</option>
-                <option value="nombre">Equipo</option>
-                <option value="pais">PaÃ­s</option>
-                <option value="marca">Marca</option>
-            </select>
+    <select id="ordenarPor">
+        <option value="equipoAnio">Equipo y a?o</option>
+        <option value="fecha">Fecha de incorporaci¨®n</option>
+        <option value="anio">A?o</option>
+        <option value="nombre">Equipo</option>
+        <option value="pais">Pa¨ªs</option>
+        <option value="marca">Marca</option>
+    </select>
 
-            <button type="button" id="cambiarDireccion">
-                Ascendente â†?
-            </button>
+    <button type="button" id="cambiarDireccion">
+        Ascendente ¡ü
+    </button>
 
-            <div class="selector-vista">
+    <!-- Bot¨®n de filtros -->
+    <button type="button" id="abrirFiltros" class="boton-abrir-filtros">
+        <span>?? Filtrar</span>
+    </button>
 
-                <button
-                    type="button"
-                    id="vistaCuadricula"
-                    class="vista-activa"
-                    aria-label="Vista de cuadrÃ­cula"
-                    aria-pressed="true"
-                    title="Vista de cuadrÃ­cula">
-                    â–?
-                </button>
+    <!-- Cambio de vista -->
+    <div class="selector-vista">
 
-                <button
-                    type="button"
-                    id="vistaListado"
-                    aria-label="Vista de listado"
-                    aria-pressed="false"
-                    title="Vista de listado">
-                    â˜?
-                </button>
+        <button
+            type="button"
+            id="vistaCuadricula"
+            class="vista-activa"
+            aria-label="Vista de cuadr¨ªcula"
+            aria-pressed="true"
+            title="Vista de cuadr¨ªcula">
+            ?
+        </button>
 
-            </div>
+        <button
+            type="button"
+            id="vistaListado"
+            aria-label="Vista de listado"
+            aria-pressed="false"
+            title="Vista de listado">
+            ?
+        </button>
+
+    </div>
+
+</div>
 
             <button type="button" id="limpiarFiltros">
                 Limpiar filtros

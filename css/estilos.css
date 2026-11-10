@@ -930,3 +930,20 @@ button:hover, .boton-secundario:hover { filter: brightness(1.15); }
         width: 100%;
     }
 }
+
+/* =====================================================
+   TARJETAS: BOTÓN VER FICHA SIEMPRE ABAJO
+   ===================================================== */
+
+.tarjeta-camiseta {
+    display: flex;
+    flex-direction: column;
+}
+
+.tarjeta-camiseta .enlace-tarjeta {
+    flex: 1;
+}
+
+.tarjeta-camiseta .boton-ver-ficha {
+    margin-top: auto;
+}

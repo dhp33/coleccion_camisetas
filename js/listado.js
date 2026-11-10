@@ -180,7 +180,7 @@ function configurarFiltros() {
             modalFiltros.close();
         });
 
-    // Limpiar filtros
+    // Limpiar filtros desde el modal
     document.getElementById("limpiarFiltrosModal")
         .addEventListener("click", () => {
             limpiarFiltros(false);
