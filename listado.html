@@ -4,158 +4,171 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Explora la colecci贸n de camisetas deportivas.">
-    <title>Mi colecci贸n - Web Camisetas</title>
+    <meta name="description" content="Explora la colección de camisetas deportivas.">
+    <title>Mi colección - Web Camisetas</title>
     <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
 
 <header>
-    <h1>馃憰 Mi colecci贸n</h1>
+    <h1>?? Mi colección</h1>
     <p>Todas las camisetas en un mismo lugar</p>
 </header>
 
 <main class="contenedor-listado">
 
     <div class="cabecera-listado">
-        <h2>Galer铆a de camisetas</h2>
-        <a href="index.html" class="boton-secundario">Volver al inicio</a>
+        <h2>Galería de camisetas</h2>
+        <a href="index.html" class="boton-secundario">
+            Volver al inicio
+        </a>
     </div>
 
-<!-- Búsqueda, siempre visible -->
-<div class="barra-busqueda-listado">
-    <input
-        type="search"
-        id="busqueda"
-        placeholder="Buscar camiseta, jugador, marca..."
-        aria-label="Buscar camisetas">
-</div>
-
-<!-- Ventana modal de filtros -->
-<dialog id="modalFiltros" class="modal-filtros">
-
-    <div class="contenido-modal-filtros">
-
-        <div class="cabecera-modal-filtros">
-            <h2>Filtrar camisetas</h2>
-
-            <button
-                type="button"
-                id="cerrarFiltros"
-                class="cerrar-modal-filtros"
-                aria-label="Cerrar filtros">
-                ?
-            </button>
-        </div>
-
-        <section class="filtros-listado">
-
-            <label for="filtroDeporte">Deporte</label>
-            <select id="filtroDeporte">
-                <option value="">Todos los deportes</option>
-            </select>
-
-            <label for="filtroCaracter">Tipo</label>
-            <select id="filtroCaracter">
-                <option value="">Club y selección</option>
-            </select>
-
-            <label for="filtroPais">País</label>
-            <select id="filtroPais">
-                <option value="">Todos los países</option>
-            </select>
-
-            <label for="filtroModelo">Modelo</label>
-            <select id="filtroModelo">
-                <option value="">Todos los modelos</option>
-            </select>
-
-        </section>
-
-        <div class="acciones-modal-filtros">
-
-            <button type="button" id="limpiarFiltrosModal">
-                Limpiar filtros
-            </button>
-
-            <button type="button" id="aplicarFiltrosModal">
-                Cerrar
-            </button>
-
-        </div>
-
+    <!-- Búsqueda, siempre visible -->
+    <div class="barra-busqueda-listado">
+        <input
+            type="search"
+            id="busqueda"
+            placeholder="Buscar camiseta, jugador, marca..."
+            aria-label="Buscar camisetas">
     </div>
 
-</dialog>
+    <!-- Ventana modal de filtros -->
+    <dialog
+        id="modalFiltros"
+        class="modal-filtros"
+        aria-labelledby="tituloModalFiltros">
 
+        <div class="contenido-modal-filtros">
+
+            <div class="cabecera-modal-filtros">
+                <h2 id="tituloModalFiltros">
+                    Filtrar camisetas
+                </h2>
+
+                <button
+                    type="button"
+                    id="cerrarFiltros"
+                    class="cerrar-modal-filtros"
+                    aria-label="Cerrar filtros">
+                    ?
+                </button>
+            </div>
+
+            <section class="filtros-listado">
+
+                <label for="filtroDeporte">Deporte</label>
+                <select id="filtroDeporte">
+                    <option value="">Todos los deportes</option>
+                </select>
+
+                <label for="filtroCaracter">Tipo</label>
+                <select id="filtroCaracter">
+                    <option value="">Club y selección</option>
+                </select>
+
+                <label for="filtroPais">País</label>
+                <select id="filtroPais">
+                    <option value="">Todos los países</option>
+                </select>
+
+                <label for="filtroModelo">Modelo</label>
+                <select id="filtroModelo">
+                    <option value="">Todos los modelos</option>
+                </select>
+
+            </section>
+
+            <div class="acciones-modal-filtros">
+
+                <button type="button" id="limpiarFiltrosModal">
+                    Limpiar filtros
+                </button>
+
+                <button type="button" id="aplicarFiltrosModal">
+                    Cerrar
+                </button>
+
+            </div>
+
+        </div>
+
+    </dialog>
+
+    <!-- Contador, ordenación y controles -->
     <div class="controles-listado">
 
         <p id="contadorCamisetas" class="resumen-listado">
-            Cargando colecci贸n...
+            Cargando colección...
         </p>
 
-<div class="opciones-listado">
+        <div class="opciones-listado">
 
-    <label for="ordenarPor">Ordenar por:</label>
+            <label for="ordenarPor">Ordenar por:</label>
 
-    <select id="ordenarPor">
-        <option value="equipoAnio">Equipo y a?o</option>
-        <option value="fecha">Fecha de incorporación</option>
-        <option value="anio">A?o</option>
-        <option value="nombre">Equipo</option>
-        <option value="pais">País</option>
-        <option value="marca">Marca</option>
-    </select>
+            <select id="ordenarPor">
+                <option value="equipoAnio">Equipo y a?o</option>
+                <option value="fecha">Fecha de incorporación</option>
+                <option value="anio">A?o</option>
+                <option value="nombre">Equipo</option>
+                <option value="pais">País</option>
+                <option value="marca">Marca</option>
+            </select>
 
-    <button type="button" id="cambiarDireccion">
-        Ascendente ↑
-    </button>
-
-    <!-- Botón de filtros -->
-    <button type="button" id="abrirFiltros" class="boton-abrir-filtros">
-        <span>?? Filtrar</span>
-    </button>
-
-    <!-- Cambio de vista -->
-    <div class="selector-vista">
-
-        <button
-            type="button"
-            id="vistaCuadricula"
-            class="vista-activa"
-            aria-label="Vista de cuadrícula"
-            aria-pressed="true"
-            title="Vista de cuadrícula">
-            ?
-        </button>
-
-        <button
-            type="button"
-            id="vistaListado"
-            aria-label="Vista de listado"
-            aria-pressed="false"
-            title="Vista de listado">
-            ?
-        </button>
-
-    </div>
-
-</div>
-
-            <button type="button" id="limpiarFiltros">
-                Limpiar filtros
+            <button type="button" id="cambiarDireccion">
+                Ascendente ↑
             </button>
 
+            <!-- Botón de filtros -->
+            <button
+                type="button"
+                id="abrirFiltros"
+                class="boton-abrir-filtros">
+                <span>?? Filtrar</span>
+            </button>
+
+            <!-- Cambio de vista -->
+            <div class="selector-vista">
+
+                <button
+                    type="button"
+                    id="vistaCuadricula"
+                    class="vista-activa"
+                    aria-label="Vista de cuadrícula"
+                    aria-pressed="true"
+                    title="Vista de cuadrícula">
+                    ?
+                </button>
+
+                <button
+                    type="button"
+                    id="vistaListado"
+                    aria-label="Vista de listado"
+                    aria-pressed="false"
+                    title="Vista de listado">
+                    ?
+                </button>
+
+            </div>
+
         </div>
+
     </div>
 
-    <section id="galeriaCamisetas" class="galeria-camisetas"></section>
+    <!-- Galería -->
+    <section
+        id="galeriaCamisetas"
+        class="galeria-camisetas">
+    </section>
 
+    <!-- Mensajes de estado -->
     <p id="mensajeListado" role="status" aria-live="polite"></p>
 
 </main>
 
-<footer>Colecci贸n personal de camisetas deportivas</footer>
+<footer>
+    Colección personal de camisetas deportivas
+</footer>
 
 <script src="js/listado.js"></script>
 

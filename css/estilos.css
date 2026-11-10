@@ -531,10 +531,6 @@ button:hover, .boton-secundario:hover { filter: brightness(1.15); }
     background: var(--accent);
 }
 
-#limpiarFiltros {
-    background: #444;
-}
-
 .selector-vista {
     display: flex;
     align-items: center;
@@ -946,4 +942,171 @@ button:hover, .boton-secundario:hover { filter: brightness(1.15); }
 
 .tarjeta-camiseta .boton-ver-ficha {
     margin-top: auto;
+}
+
+
+/* =====================================================
+   CORRECCIONES DEFINITIVAS DEL LISTADO PÚBLICO
+   ===================================================== */
+
+/* Barra de búsqueda */
+
+.barra-busqueda-listado {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.barra-busqueda-listado input {
+    display: block;
+    width: 100%;
+    padding: 13px 15px;
+    background: #222;
+    color: var(--text);
+    border: 1px solid #444;
+    border-radius: 7px;
+    font: inherit;
+}
+
+.barra-busqueda-listado input:focus {
+    outline: 2px solid var(--accent);
+    outline-offset: 1px;
+}
+
+/* Modal de filtros */
+
+.modal-filtros {
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.contenido-modal-filtros {
+    width: 100%;
+}
+
+/* Los cuatro filtros en disposición vertical */
+
+.modal-filtros .filtros-listado {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 9px;
+    margin: 0;
+}
+
+/* Etiquetas */
+
+.modal-filtros .filtros-listado label {
+    margin-top: 8px;
+    color: var(--secondary);
+    font-size: 14px;
+}
+
+/* Desplegables */
+
+.modal-filtros .filtros-listado select {
+    width: 100%;
+    min-width: 0;
+    padding: 11px 12px;
+    background: #222;
+    color: white;
+    border: 1px solid #444;
+    border-radius: 6px;
+    font: inherit;
+}
+
+/* Botones del modal */
+
+.acciones-modal-filtros {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.acciones-modal-filtros button {
+    flex: 1;
+    min-width: 0;
+}
+
+/* Botón de abrir filtros */
+
+#abrirFiltros {
+    flex-shrink: 0;
+    white-space: nowrap;
+}
+
+/* Controles del listado */
+
+.opciones-listado {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* Tarjetas: botón siempre abajo */
+
+.tarjeta-camiseta {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.tarjeta-camiseta .enlace-tarjeta {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.tarjeta-camiseta .boton-ver-ficha {
+    display: block;
+    width: calc(100% - 30px);
+    margin: auto 15px 15px;
+    text-align: center;
+}
+
+/* Vista horizontal */
+
+.galeria-camisetas.vista-listado .tarjeta-camiseta {
+    flex-direction: row;
+    align-items: stretch;
+}
+
+.galeria-camisetas.vista-listado .enlace-tarjeta {
+    flex-direction: row;
+}
+
+.galeria-camisetas.vista-listado .boton-ver-ficha {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    flex: 0 0 145px;
+    width: auto;
+    margin: 15px;
+}
+
+/* Adaptación a móviles */
+
+@media (max-width: 600px) {
+
+    .opciones-listado {
+        justify-content: flex-start;
+    }
+
+    .galeria-camisetas.vista-listado .tarjeta-camiseta {
+        flex-direction: column;
+    }
+
+    .galeria-camisetas.vista-listado .enlace-tarjeta {
+        flex-direction: column;
+    }
+
+    .galeria-camisetas.vista-listado .boton-ver-ficha {
+        display: block;
+        flex: none;
+        width: calc(100% - 30px);
+        margin: auto 15px 15px;
+    }
 }

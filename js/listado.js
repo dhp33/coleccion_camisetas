@@ -39,11 +39,17 @@ function obtenerPrioridadModelo(modelo) {
     return prioridades[modeloNormalizado] ?? 99;
 }
 
+// =====================================================
+// CARGAR LISTADO
+// =====================================================
+
 async function cargarListado() {
+
     const galeria = document.getElementById("galeriaCamisetas");
     const mensaje = document.getElementById("mensajeListado");
 
     try {
+
         mensaje.textContent = "Cargando colección...";
 
         const respuesta = await fetch("data/camisetas.json", {
@@ -68,36 +74,38 @@ async function cargarListado() {
 
         prepararFiltros();
 
-		// Leer los filtros enviados desde la portada.
-		const parametros = new URLSearchParams(window.location.search);
+        // Leer los filtros enviados desde la portada.
+        const parametros = new URLSearchParams(window.location.search);
 
-		const deporteURL = parametros.get("deporte") || "";
-		equipoURL = parametros.get("equipo") || "";
+        const deporteURL = parametros.get("deporte") || "";
+        equipoURL = parametros.get("equipo") || "";
 
-		// Mostrar el equipo recibido en la caja de búsqueda.
-		if (equipoURL) {
-			document.getElementById("busqueda").value = equipoURL;
-		}
+        // Mostrar el equipo recibido en la caja de búsqueda.
+        if (equipoURL) {
+            document.getElementById("busqueda").value = equipoURL;
+        }
 
-		// Seleccionar el deporte correspondiente.
-		if (deporteURL) {
-			const filtroDeporte = document.getElementById("filtroDeporte");
+        // Seleccionar el deporte correspondiente.
+        if (deporteURL) {
 
-			const opcion = [...filtroDeporte.options].find(opcion =>
-				normalizar(opcion.value) === normalizar(deporteURL)
-			);
+            const filtroDeporte = document.getElementById("filtroDeporte");
 
-			if (opcion) {
-				filtroDeporte.value = opcion.value;
-			}
-		}
+            const opcion = [...filtroDeporte.options].find(opcion =>
+                normalizar(opcion.value) === normalizar(deporteURL)
+            );
 
-		configurarFiltros();
-		aplicarFiltros();
+            if (opcion) {
+                filtroDeporte.value = opcion.value;
+            }
+        }
+
+        configurarFiltros();
+        aplicarFiltros();
 
         mensaje.textContent = "";
 
     } catch (error) {
+
         console.error("Error cargando listado:", error);
 
         mensaje.textContent =
@@ -115,6 +123,7 @@ async function cargarListado() {
 // =====================================================
 
 function prepararFiltros() {
+
     rellenarFiltro("filtroDeporte", "Todos los deportes", "deporte");
     rellenarFiltro("filtroCaracter", "Club y selección", "caracter");
     rellenarFiltro("filtroPais", "Todos los países", "pais");
@@ -122,6 +131,7 @@ function prepararFiltros() {
 }
 
 function rellenarFiltro(id, textoInicial, propiedad) {
+
     const select = document.getElementById(id);
 
     select.replaceChildren();
@@ -139,6 +149,7 @@ function rellenarFiltro(id, textoInicial, propiedad) {
     )].sort((a, b) => a.localeCompare(b, "es"));
 
     valores.forEach(valor => {
+
         const opcion = document.createElement("option");
 
         opcion.value = valor;
@@ -150,18 +161,26 @@ function rellenarFiltro(id, textoInicial, propiedad) {
 
 function configurarFiltros() {
 
+    // Búsqueda
     document.getElementById("busqueda")
         .addEventListener("input", gestionarBusqueda);
 
-    ["filtroDeporte", "filtroCaracter", "filtroPais", "filtroModelo"]
-        .forEach(id => {
-            document.getElementById(id)
-                .addEventListener("change", aplicarFiltros);
-        });
+    // Desplegables de filtros
+    [
+        "filtroDeporte",
+        "filtroCaracter",
+        "filtroPais",
+        "filtroModelo"
+    ].forEach(id => {
 
-    // Abrir ventana de filtros
+        document.getElementById(id)
+            .addEventListener("change", aplicarFiltros);
+    });
+
+    // Modal de filtros
     const modalFiltros = document.getElementById("modalFiltros");
 
+    // Abrir modal
     document.getElementById("abrirFiltros")
         .addEventListener("click", () => {
             modalFiltros.showModal();
@@ -173,7 +192,7 @@ function configurarFiltros() {
             modalFiltros.close();
         });
 
-    // Aplicar y cerrar
+    // Cerrar desde el botón inferior
     document.getElementById("aplicarFiltrosModal")
         .addEventListener("click", () => {
             aplicarFiltros();
@@ -188,6 +207,7 @@ function configurarFiltros() {
 
     // Cerrar al pulsar fuera de la ventana
     modalFiltros.addEventListener("click", event => {
+
         if (event.target === modalFiltros) {
             modalFiltros.close();
         }
@@ -196,6 +216,7 @@ function configurarFiltros() {
     // Ordenación
     document.getElementById("ordenarPor")
         .addEventListener("change", event => {
+
             criterioOrden = event.target.value;
             aplicarFiltros();
         });
@@ -209,10 +230,6 @@ function configurarFiltros() {
 
     document.getElementById("vistaListado")
         .addEventListener("click", () => cambiarVista("listado"));
-
-    // Limpiar todos los filtros
-    document.getElementById("limpiarFiltros")
-        .addEventListener("click", limpiarFiltros);
 }
 
 // Gestionar la búsqueda sin alterar los demás filtros
@@ -256,8 +273,8 @@ function aplicarFiltros() {
     const caracter = document.getElementById("filtroCaracter").value;
     const pais = document.getElementById("filtroPais").value;
     const modelo = document.getElementById("filtroModelo").value;
-	
-    // Actualizar el indicador de filtros activos
+
+    // Actualizar el indicador de filtros activos.
     const filtrosActivos = [
         deporte,
         caracter,
@@ -265,10 +282,18 @@ function aplicarFiltros() {
         modelo
     ].filter(Boolean).length;
 
-    document.getElementById("abrirFiltros").textContent =
-        filtrosActivos > 0
-            ? `⚙️ Filtrar (${filtrosActivos})`
-            : "⚙️ Filtrar";
+    // Actualizar el texto sin eliminar el span del HTML.
+    const textoBotonFiltros = document.querySelector("#abrirFiltros span");
+
+    const textoFiltros = filtrosActivos > 0
+        ? `⚙️ Filtrar (${filtrosActivos})`
+        : "⚙️ Filtrar";
+
+    if (textoBotonFiltros) {
+        textoBotonFiltros.textContent = textoFiltros;
+    } else {
+        document.getElementById("abrirFiltros").textContent = textoFiltros;
+    }
 
     const filtradas = todasLasCamisetas.filter(camiseta => {
 
@@ -285,18 +310,24 @@ function aplicarFiltros() {
             camiseta.descripcion
         ].join(" "));
 
-	return (!busqueda || texto.includes(busqueda)) &&
-		(!deporte || camiseta.deporte === deporte) &&
-		(!equipoURL || normalizar(camiseta.nombre) === normalizar(equipoURL)) &&
-		(!caracter || camiseta.caracter === caracter) &&
-		(!pais || camiseta.pais === pais) &&
-		(!modelo || camiseta.modelo === modelo);
+        return (
+            (!busqueda || texto.includes(busqueda)) &&
+            (!deporte || camiseta.deporte === deporte) &&
+            (!equipoURL || normalizar(camiseta.nombre) === normalizar(equipoURL)) &&
+            (!caracter || camiseta.caracter === caracter) &&
+            (!pais || camiseta.pais === pais) &&
+            (!modelo || camiseta.modelo === modelo)
+        );
     });
 
     ordenarCamisetas(filtradas);
 
     mostrarCamisetas(filtradas);
 }
+
+// =====================================================
+// ORDENAR CAMISETAS
+// =====================================================
 
 function ordenarCamisetas(camisetas) {
 
@@ -308,30 +339,31 @@ function ordenarCamisetas(camisetas) {
 
             case "equipoAnio":
 
-				// 1. Equipos de la A a la Z.
-				resultado = String(a.nombre || "").localeCompare(
-					String(b.nombre || ""),
-					"es",
-					{ sensitivity: "base" }
-				);
+                // 1. Equipos de la A a la Z.
+                resultado = String(a.nombre || "").localeCompare(
+                    String(b.nombre || ""),
+                    "es",
+                    { sensitivity: "base" }
+                );
 
-				if (resultado !== 0) break;
+                if (resultado !== 0) break;
 
-				// 2. Dentro de cada equipo, años más antiguos primero.
-				resultado =
-					(Number(a.anio) || 0) -
-					(Number(b.anio) || 0);
+                // 2. Dentro de cada equipo, años más antiguos primero.
+                resultado =
+                    (Number(a.anio) || 0) -
+                    (Number(b.anio) || 0);
 
-				if (resultado !== 0) break;
+                if (resultado !== 0) break;
 
-				// 3. Dentro del mismo equipo y año, prioridad del modelo.
-				resultado =
-					obtenerPrioridadModelo(a.modelo) -
-					obtenerPrioridadModelo(b.modelo);
+                // 3. Prioridad del modelo.
+                resultado =
+                    obtenerPrioridadModelo(a.modelo) -
+                    obtenerPrioridadModelo(b.modelo);
 
-				break;
+                break;
 
             case "fecha": {
+
                 const fechaA = a.fechaAlta
                     ? new Date(a.fechaAlta).getTime()
                     : null;
@@ -340,15 +372,27 @@ function ordenarCamisetas(camisetas) {
                     ? new Date(b.fechaAlta).getTime()
                     : null;
 
-                if (fechaA !== null && !Number.isNaN(fechaA) &&
-                    fechaB !== null && !Number.isNaN(fechaB)) {
+                if (
+                    fechaA !== null &&
+                    !Number.isNaN(fechaA) &&
+                    fechaB !== null &&
+                    !Number.isNaN(fechaB)
+                ) {
 
                     resultado = fechaA - fechaB;
 
-                } else if (fechaA !== null && !Number.isNaN(fechaA)) {
+                } else if (
+                    fechaA !== null &&
+                    !Number.isNaN(fechaA)
+                ) {
+
                     resultado = 1;
 
-                } else if (fechaB !== null && !Number.isNaN(fechaB)) {
+                } else if (
+                    fechaB !== null &&
+                    !Number.isNaN(fechaB)
+                ) {
+
                     resultado = -1;
                 }
 
@@ -356,23 +400,31 @@ function ordenarCamisetas(camisetas) {
             }
 
             case "anio":
+
                 resultado =
                     Number(a.anio || 0) - Number(b.anio || 0);
+
                 break;
 
             case "nombre":
+
                 resultado = String(a.nombre || "")
                     .localeCompare(String(b.nombre || ""), "es");
+
                 break;
 
             case "pais":
+
                 resultado = String(a.pais || "")
                     .localeCompare(String(b.pais || ""), "es");
+
                 break;
 
             case "marca":
+
                 resultado = String(a.marca || "")
                     .localeCompare(String(b.marca || ""), "es");
+
                 break;
         }
 
@@ -521,7 +573,6 @@ function mostrarCamisetas(camisetas) {
 
         datos.appendChild(titulo);
 
-
         enlace.appendChild(datos);
         tarjeta.appendChild(enlace);
 
@@ -539,13 +590,15 @@ function mostrarCamisetas(camisetas) {
 }
 
 // =====================================================
-// DATOS DE CADA CAMISETA
+// LIMPIAR FILTROS
 // =====================================================
+
 function limpiarFiltros(cerrarModal = true) {
 
     equipoURL = "";
 
     const parametros = new URLSearchParams(window.location.search);
+
     parametros.delete("equipo");
     parametros.delete("deporte");
 
@@ -556,6 +609,7 @@ function limpiarFiltros(cerrarModal = true) {
     window.history.replaceState({}, "", nuevaURL);
 
     document.getElementById("busqueda").value = "";
+
     document.getElementById("filtroDeporte").value = "";
     document.getElementById("filtroCaracter").value = "";
     document.getElementById("filtroPais").value = "";
@@ -571,15 +625,19 @@ function limpiarFiltros(cerrarModal = true) {
 
     aplicarFiltros();
 
-        const modal = document.getElementById("modalFiltros");
+    const modal = document.getElementById("modalFiltros");
 
     if (cerrarModal && modal.open) {
         modal.close();
     }
 }
 
-// Construir un título descriptivo a partir de los datos de la camiseta.
+// =====================================================
+// GENERAR TÍTULO DE CADA CAMISETA
+// =====================================================
+
 function generarTituloCamiseta(camiseta) {
+
     const anio = camiseta.anio ? ` de ${camiseta.anio}` : "";
     const caracter = String(camiseta.caracter || "").toLowerCase();
     const modelo = String(camiseta.modelo || "").trim();
@@ -601,4 +659,3 @@ function generarTituloCamiseta(camiseta) {
     return `Camiseta ${tipoModelo}del ${equipo || "equipo sin nombre"}${anio}`
         .replace(/\s+/g, " ").trim();
 }
-
