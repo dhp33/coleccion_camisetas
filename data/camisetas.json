@@ -423,5 +423,102 @@
         ],
         "fotoFrontal": "000022_foto1.webp",
         "fotoTrasera": ""
+    },
+    {
+        "id": 23,
+        "fechaAlta": "2026-11-10",
+        "deporte": "Fútbol",
+        "caracter": "Club",
+        "pais": "España",
+        "nombre": "Real Madrid",
+        "anio": 2020,
+        "marca": "Adidas",
+        "modelo": "Tercera",
+        "jugador": "",
+        "dorsal": "",
+        "descripcion": "",
+        "fotos": [
+            "000023_foto1.webp"
+        ],
+        "fotoFrontal": "000023_foto1.webp",
+        "fotoTrasera": ""
+    },
+    {
+        "id": 24,
+        "fechaAlta": "2026-11-10",
+        "deporte": "Fútbol",
+        "caracter": "Club",
+        "pais": "España",
+        "nombre": "Real Madrid",
+        "anio": 1999,
+        "marca": "Adidas",
+        "modelo": "Local",
+        "jugador": "",
+        "dorsal": "",
+        "descripcion": "",
+        "fotos": [
+            "000024_foto1.webp"
+        ],
+        "fotoFrontal": "000024_foto1.webp",
+        "fotoTrasera": ""
+    },
+    {
+        "id": 25,
+        "fechaAlta": "2026-11-10",
+        "deporte": "Fútbol",
+        "caracter": "Selección",
+        "pais": "Argentina",
+        "nombre": "Selección Argentina",
+        "anio": 1986,
+        "marca": "Le Coq Sportif",
+        "modelo": "Visitante",
+        "jugador": "Maradona",
+        "dorsal": "10",
+        "descripcion": "",
+        "fotos": [
+            "000025_foto1.webp",
+            "000025_foto2.webp"
+        ],
+        "fotoFrontal": "000025_foto1.webp",
+        "fotoTrasera": "000025_foto2.webp"
+    },
+    {
+        "id": 26,
+        "fechaAlta": "2026-11-10",
+        "deporte": "Fútbol",
+        "caracter": "Club",
+        "pais": "España",
+        "nombre": "Real Madrid",
+        "anio": 2008,
+        "marca": "Adidas",
+        "modelo": "Local",
+        "jugador": "Raúl",
+        "dorsal": "7",
+        "descripcion": "",
+        "fotos": [
+            "000026_foto1.webp",
+            "000026_foto2.webp"
+        ],
+        "fotoFrontal": "000026_foto1.webp",
+        "fotoTrasera": "000026_foto2.webp"
+    },
+    {
+        "id": 27,
+        "fechaAlta": "2026-11-10",
+        "deporte": "Fútbol",
+        "caracter": "Club",
+        "pais": "Portugal",
+        "nombre": "Oporto FC",
+        "anio": 2015,
+        "marca": "New Balance",
+        "modelo": "Tercera",
+        "jugador": "",
+        "dorsal": "",
+        "descripcion": "",
+        "fotos": [
+            "000027_foto1.webp"
+        ],
+        "fotoFrontal": "000027_foto1.webp",
+        "fotoTrasera": ""
     }
 ]
