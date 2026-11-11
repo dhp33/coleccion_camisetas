@@ -520,5 +520,24 @@
         ],
         "fotoFrontal": "000027_foto1.webp",
         "fotoTrasera": ""
+    },
+    {
+        "id": 28,
+        "fechaAlta": "2026-11-11",
+        "deporte": "Fútbol",
+        "caracter": "Selección",
+        "pais": "Noruega",
+        "nombre": "Selección Noruega",
+        "anio": 2026,
+        "marca": "Nike",
+        "modelo": "Local",
+        "jugador": "",
+        "dorsal": "",
+        "descripcion": "",
+        "fotos": [
+            "000028_foto1.webp"
+        ],
+        "fotoFrontal": "000028_foto1.webp",
+        "fotoTrasera": ""
     }
 ]
