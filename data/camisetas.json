@@ -539,5 +539,24 @@
         ],
         "fotoFrontal": "000028_foto1.webp",
         "fotoTrasera": ""
+    },
+    {
+        "id": 29,
+        "fechaAlta": "2026-11-13",
+        "deporte": "Fútbol",
+        "caracter": "Club",
+        "pais": "España",
+        "nombre": "Real Valladolid",
+        "anio": 2023,
+        "marca": "Kappa",
+        "modelo": "Visitante",
+        "jugador": "",
+        "dorsal": "",
+        "descripcion": "",
+        "fotos": [
+            "000029_foto1.webp"
+        ],
+        "fotoFrontal": "000029_foto1.webp",
+        "fotoTrasera": ""
     }
 ]
