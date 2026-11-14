@@ -558,5 +558,25 @@
         ],
         "fotoFrontal": "000029_foto1.webp",
         "fotoTrasera": ""
+    },
+    {
+        "id": 30,
+        "fechaAlta": "2026-11-14",
+        "deporte": "Fútbol",
+        "caracter": "Club",
+        "pais": "España",
+        "nombre": "Real Valladolid",
+        "anio": 1997,
+        "marca": "Kelme",
+        "modelo": "Local",
+        "jugador": "",
+        "dorsal": "10",
+        "descripcion": "",
+        "fotos": [
+            "000030_foto1.webp",
+            "000030_foto2.webp"
+        ],
+        "fotoFrontal": "000030_foto1.webp",
+        "fotoTrasera": "000030_foto2.webp"
     }
 ]
