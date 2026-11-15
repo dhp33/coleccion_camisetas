@@ -578,5 +578,177 @@
         ],
         "fotoFrontal": "000030_foto1.webp",
         "fotoTrasera": "000030_foto2.webp"
+    },
+    {
+        "id": 31,
+        "fechaAlta": "2026-11-15",
+        "deporte": "Fútbol",
+        "caracter": "Club",
+        "pais": "Italia",
+        "nombre": "Nápoles",
+        "anio": 2020,
+        "marca": "Kappa",
+        "modelo": "Tercera",
+        "jugador": "",
+        "dorsal": "",
+        "descripcion": "",
+        "fotos": [
+            "000031_foto1.webp"
+        ],
+        "fotoFrontal": "000031_foto1.webp",
+        "fotoTrasera": ""
+    },
+    {
+        "id": 32,
+        "fechaAlta": "2026-11-15",
+        "deporte": "Fútbol",
+        "caracter": "Club",
+        "pais": "España",
+        "nombre": "Mondoñedo FC",
+        "anio": 2017,
+        "marca": "Trezze",
+        "modelo": "Visitante",
+        "jugador": "",
+        "dorsal": "",
+        "descripcion": "",
+        "fotos": [
+            "000032_foto1.webp"
+        ],
+        "fotoFrontal": "000032_foto1.webp",
+        "fotoTrasera": ""
+    },
+    {
+        "id": 33,
+        "fechaAlta": "2026-11-15",
+        "deporte": "Fútbol",
+        "caracter": "Club",
+        "pais": "España",
+        "nombre": "Real Valladolid",
+        "anio": 2022,
+        "marca": "Adidas",
+        "modelo": "Local",
+        "jugador": "",
+        "dorsal": "",
+        "descripcion": "",
+        "fotos": [
+            "000033_foto1.webp"
+        ],
+        "fotoFrontal": "000033_foto1.webp",
+        "fotoTrasera": ""
+    },
+    {
+        "id": 34,
+        "fechaAlta": "2026-11-15",
+        "deporte": "Fútbol",
+        "caracter": "Club",
+        "pais": "España",
+        "nombre": "Real Valladolid",
+        "anio": 1983,
+        "marca": "Adidas",
+        "modelo": "Visitante",
+        "jugador": "",
+        "dorsal": "",
+        "descripcion": "",
+        "fotos": [
+            "000034_foto1.webp"
+        ],
+        "fotoFrontal": "000034_foto1.webp",
+        "fotoTrasera": ""
+    },
+    {
+        "id": 35,
+        "fechaAlta": "2026-11-15",
+        "deporte": "Fútbol",
+        "caracter": "Selección",
+        "pais": "España",
+        "nombre": "Real Valladolid",
+        "anio": 2024,
+        "marca": "Kappa",
+        "modelo": "Tercera",
+        "jugador": "",
+        "dorsal": "",
+        "descripcion": "",
+        "fotos": [
+            "000035_foto1.webp"
+        ],
+        "fotoFrontal": "000035_foto1.webp",
+        "fotoTrasera": ""
+    },
+    {
+        "id": 36,
+        "fechaAlta": "2026-11-15",
+        "deporte": "Fútbol",
+        "caracter": "Club",
+        "pais": "España",
+        "nombre": "Real Valladolid",
+        "anio": 2026,
+        "marca": "Reebok",
+        "modelo": "Portero",
+        "jugador": "",
+        "dorsal": "",
+        "descripcion": "",
+        "fotos": [
+            "000036_foto1.webp"
+        ],
+        "fotoFrontal": "000036_foto1.webp",
+        "fotoTrasera": ""
+    },
+    {
+        "id": 37,
+        "fechaAlta": "2026-11-15",
+        "deporte": "Fútbol",
+        "caracter": "Selección",
+        "pais": "Portugal",
+        "nombre": "Selección Portuguesa",
+        "anio": 2006,
+        "marca": "Nike",
+        "modelo": "Local",
+        "jugador": "Cristiano Ronaldo",
+        "dorsal": "17",
+        "descripcion": "",
+        "fotos": [
+            "000037_foto1.webp",
+            "000037_foto2.webp"
+        ],
+        "fotoFrontal": "000037_foto1.webp",
+        "fotoTrasera": "000037_foto2.webp"
+    },
+    {
+        "id": 38,
+        "fechaAlta": "2026-11-15",
+        "deporte": "Fútbol",
+        "caracter": "Club",
+        "pais": "España",
+        "nombre": "Real Valladolid",
+        "anio": 2015,
+        "marca": "Hummel",
+        "modelo": "Visitante",
+        "jugador": "",
+        "dorsal": "",
+        "descripcion": "",
+        "fotos": [
+            "000038_foto1.webp"
+        ],
+        "fotoFrontal": "000038_foto1.webp",
+        "fotoTrasera": ""
+    },
+    {
+        "id": 39,
+        "fechaAlta": "2026-11-15",
+        "deporte": "Fútbol",
+        "caracter": "Club",
+        "pais": "España",
+        "nombre": "UD Ourense",
+        "anio": 2025,
+        "marca": "UDO",
+        "modelo": "Especial",
+        "jugador": "",
+        "dorsal": "",
+        "descripcion": "",
+        "fotos": [
+            "000039_foto1.webp"
+        ],
+        "fotoFrontal": "000039_foto1.webp",
+        "fotoTrasera": ""
     }
 ]
