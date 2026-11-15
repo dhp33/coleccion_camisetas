@@ -268,6 +268,27 @@ function dibujarGraficoDeporte(datos, contenedor) {
 
     });
 
-    tarjeta.appendChild(listaEquipos);
+        tarjeta.appendChild(listaEquipos);
     contenedor.appendChild(tarjeta);
+
+    // Limitar el listado a la altura de los primeros 6 equipos.
+    if (listaEquipos.children.length > 6) {
+
+        requestAnimationFrame(() => {
+
+            const primerosSeis = Array.from(listaEquipos.children)
+                .slice(0, 6);
+
+            const alturaMaxima = primerosSeis.reduce(
+                (total, fila) => total + fila.offsetHeight,
+                0
+            );
+
+            listaEquipos.style.maxHeight = `${alturaMaxima}px`;
+        });
+
+    } else {
+
+        listaEquipos.classList.add("lista-equipos-corta");
+    }
 }

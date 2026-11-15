@@ -1218,3 +1218,39 @@ button:hover, .boton-secundario:hover { filter: brightness(1.15); }
         justify-content: flex-start;
     }
 }
+
+/* =====================================================
+   LISTADO DE EQUIPOS: SCROLL Y CENTRADO
+   ===================================================== */
+
+.lista-equipos {
+    min-width: 0;
+    align-self: stretch;
+    justify-content: flex-start;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-gutter: stable;
+    padding-right: 8px;
+}
+
+.equipo-estadistica {
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.enlace-equipo {
+    flex: 1 1 auto;
+    min-width: 0;
+    overflow-wrap: anywhere;
+    line-height: 1.35;
+}
+
+.cantidad-equipo {
+    flex: 0 0 auto;
+    white-space: nowrap;
+}
+
+/* Centrar listas con 6 equipos o menos */
+.lista-equipos-corta {
+    justify-content: center;
+}
