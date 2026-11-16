@@ -846,5 +846,176 @@
         ],
         "fotoFrontal": "000044_foto1.webp",
         "fotoTrasera": ""
+    },
+    {
+        "id": 45,
+        "fechaAlta": "2026-11-16",
+        "deporte": "Fútbol",
+        "caracter": "Club",
+        "pais": "España",
+        "nombre": "Tenerife",
+        "anio": 2024,
+        "marca": "Hummel",
+        "modelo": "Local",
+        "jugador": "",
+        "dorsal": "",
+        "descripcion": "",
+        "fotos": [
+            "000045_foto1.webp"
+        ],
+        "fotoFrontal": "000045_foto1.webp",
+        "fotoTrasera": ""
+    },
+    {
+        "id": 46,
+        "fechaAlta": "2026-11-16",
+        "deporte": "Fútbol",
+        "caracter": "Club",
+        "pais": "España",
+        "nombre": "Real Valladolid",
+        "anio": 2001,
+        "marca": "Umbro",
+        "modelo": "Visitante",
+        "jugador": "",
+        "dorsal": "",
+        "descripcion": "",
+        "fotos": [
+            "000046_foto1.webp"
+        ],
+        "fotoFrontal": "000046_foto1.webp",
+        "fotoTrasera": ""
+    },
+    {
+        "id": 47,
+        "fechaAlta": "2026-11-16",
+        "deporte": "Fútbol",
+        "caracter": "Club",
+        "pais": "España",
+        "nombre": "Real Valladolid",
+        "anio": 2021,
+        "marca": "Adidas",
+        "modelo": "Visitante",
+        "jugador": "",
+        "dorsal": "",
+        "descripcion": "",
+        "fotos": [
+            "000047_foto1.webp"
+        ],
+        "fotoFrontal": "000047_foto1.webp",
+        "fotoTrasera": ""
+    },
+    {
+        "id": 48,
+        "fechaAlta": "2026-11-16",
+        "deporte": "Fútbol",
+        "caracter": "Club",
+        "pais": "España",
+        "nombre": "Real Valladolid",
+        "anio": 1983,
+        "marca": "Meyba",
+        "modelo": "Local",
+        "jugador": "",
+        "dorsal": "",
+        "descripcion": "",
+        "fotos": [
+            "000048_foto1.webp"
+        ],
+        "fotoFrontal": "000048_foto1.webp",
+        "fotoTrasera": ""
+    },
+    {
+        "id": 49,
+        "fechaAlta": "2026-11-16",
+        "deporte": "Fútbol",
+        "caracter": "Club",
+        "pais": "España",
+        "nombre": "Real Valladolid",
+        "anio": 1995,
+        "marca": "Kelme",
+        "modelo": "Local",
+        "jugador": "",
+        "dorsal": "",
+        "descripcion": "",
+        "fotos": [
+            "000049_foto1.webp"
+        ],
+        "fotoFrontal": "000049_foto1.webp",
+        "fotoTrasera": ""
+    },
+    {
+        "id": 50,
+        "fechaAlta": "2026-11-16",
+        "deporte": "Fútbol",
+        "caracter": "Club",
+        "pais": "España",
+        "nombre": "Real Valladolid",
+        "anio": 1988,
+        "marca": "Rasán",
+        "modelo": "Local",
+        "jugador": "",
+        "dorsal": "",
+        "descripcion": "",
+        "fotos": [
+            "000050_foto1.webp"
+        ],
+        "fotoFrontal": "000050_foto1.webp",
+        "fotoTrasera": ""
+    },
+    {
+        "id": 51,
+        "fechaAlta": "2026-11-16",
+        "deporte": "Fútbol",
+        "caracter": "Club",
+        "pais": "España",
+        "nombre": "Real Valladolid",
+        "anio": 2003,
+        "marca": "Umbro",
+        "modelo": "Especial",
+        "jugador": "",
+        "dorsal": "",
+        "descripcion": "",
+        "fotos": [
+            "000051_foto1.webp"
+        ],
+        "fotoFrontal": "000051_foto1.webp",
+        "fotoTrasera": ""
+    },
+    {
+        "id": 52,
+        "fechaAlta": "2026-11-16",
+        "deporte": "Fútbol",
+        "caracter": "Selección",
+        "pais": "Alemania",
+        "nombre": "Selección Alemana",
+        "anio": 2024,
+        "marca": "Adidas",
+        "modelo": "Visitante",
+        "jugador": "",
+        "dorsal": "",
+        "descripcion": "",
+        "fotos": [
+            "000052_foto1.webp"
+        ],
+        "fotoFrontal": "000052_foto1.webp",
+        "fotoTrasera": ""
+    },
+    {
+        "id": 53,
+        "fechaAlta": "2026-11-16",
+        "deporte": "Rugby",
+        "caracter": "Selección",
+        "pais": "España",
+        "nombre": "Selección Española",
+        "anio": 2006,
+        "marca": "Westport",
+        "modelo": "Local",
+        "jugador": "",
+        "dorsal": "",
+        "descripcion": "",
+        "fotos": [
+            "000053_foto1.webp"
+        ],
+        "fotoFrontal": "000053_foto1.webp",
+        "fotoTrasera": ""
     }
 ]
