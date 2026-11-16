@@ -750,5 +750,101 @@
         ],
         "fotoFrontal": "000039_foto1.webp",
         "fotoTrasera": ""
+    },
+    {
+        "id": 40,
+        "fechaAlta": "2026-11-16",
+        "deporte": "Rugby",
+        "caracter": "Club",
+        "pais": "España",
+        "nombre": "Old Devils RC Martorell",
+        "anio": 2018,
+        "marca": "Olorun",
+        "modelo": "Local",
+        "jugador": "",
+        "dorsal": "",
+        "descripcion": "",
+        "fotos": [
+            "000040_foto1.webp",
+            "000040_foto2.webp"
+        ],
+        "fotoFrontal": "000040_foto1.webp",
+        "fotoTrasera": "000040_foto2.webp"
+    },
+    {
+        "id": 41,
+        "fechaAlta": "2026-11-16",
+        "deporte": "Rugby",
+        "caracter": "Selección",
+        "pais": "Fiji",
+        "nombre": "Selección de Fiji",
+        "anio": 2023,
+        "marca": "Nike",
+        "modelo": "Visitante",
+        "jugador": "",
+        "dorsal": "",
+        "descripcion": "",
+        "fotos": [
+            "000041_foto1.webp"
+        ],
+        "fotoFrontal": "000041_foto1.webp",
+        "fotoTrasera": ""
+    },
+    {
+        "id": 42,
+        "fechaAlta": "2026-11-16",
+        "deporte": "Rugby",
+        "caracter": "Selección",
+        "pais": "Nueva Zelanda",
+        "nombre": "All Blacks",
+        "anio": 2010,
+        "marca": "Adidas",
+        "modelo": "Local",
+        "jugador": "",
+        "dorsal": "",
+        "descripcion": "",
+        "fotos": [
+            "000042_foto1.webp"
+        ],
+        "fotoFrontal": "000042_foto1.webp",
+        "fotoTrasera": ""
+    },
+    {
+        "id": 43,
+        "fechaAlta": "2026-11-16",
+        "deporte": "Rugby",
+        "caracter": "Selección",
+        "pais": "Nueva Zelanda",
+        "nombre": "All Blacks",
+        "anio": 2012,
+        "marca": "Adidas",
+        "modelo": "Local",
+        "jugador": "",
+        "dorsal": "",
+        "descripcion": "",
+        "fotos": [
+            "000043_foto1.webp"
+        ],
+        "fotoFrontal": "000043_foto1.webp",
+        "fotoTrasera": ""
+    },
+    {
+        "id": 44,
+        "fechaAlta": "2026-11-16",
+        "deporte": "Rugby",
+        "caracter": "Selección",
+        "pais": "España",
+        "nombre": "Selección Española",
+        "anio": 2019,
+        "marca": "Joma",
+        "modelo": "Local",
+        "jugador": "",
+        "dorsal": "",
+        "descripcion": "",
+        "fotos": [
+            "000044_foto1.webp"
+        ],
+        "fotoFrontal": "000044_foto1.webp",
+        "fotoTrasera": ""
     }
 ]
