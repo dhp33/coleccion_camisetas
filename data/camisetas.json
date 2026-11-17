@@ -1266,5 +1266,275 @@
         ],
         "fotoFrontal": "000066_foto1.webp",
         "fotoTrasera": ""
+    },
+    {
+        "id": 67,
+        "fechaAlta": "2026-11-17",
+        "deporte": "Fútbol",
+        "caracter": "Club",
+        "pais": "España",
+        "nombre": "Real Valladolid",
+        "anio": 1999,
+        "marca": "Kelme",
+        "modelo": "Visitante",
+        "jugador": "",
+        "dorsal": "",
+        "descripcion": "",
+        "fotos": [
+            "000067_foto1.webp"
+        ],
+        "fotoFrontal": "000067_foto1.webp",
+        "fotoTrasera": ""
+    },
+    {
+        "id": 68,
+        "fechaAlta": "2026-11-17",
+        "deporte": "Rugby",
+        "caracter": "Árbitro",
+        "pais": "España",
+        "nombre": "Federación de Rugby de CyL",
+        "anio": 2018,
+        "marca": "Kappa",
+        "modelo": "",
+        "jugador": "",
+        "dorsal": "",
+        "descripcion": "",
+        "fotos": [
+            "000068_foto1.webp"
+        ],
+        "fotoFrontal": "000068_foto1.webp",
+        "fotoTrasera": ""
+    },
+    {
+        "id": 69,
+        "fechaAlta": "2026-11-17",
+        "deporte": "Fútbol",
+        "caracter": "Club",
+        "pais": "España",
+        "nombre": "Real Valladolid",
+        "anio": 2022,
+        "marca": "Adidas",
+        "modelo": "Tercera",
+        "jugador": "",
+        "dorsal": "",
+        "descripcion": "",
+        "fotos": [
+            "000069_foto1.webp"
+        ],
+        "fotoFrontal": "000069_foto1.webp",
+        "fotoTrasera": ""
+    },
+    {
+        "id": 70,
+        "fechaAlta": "2026-11-17",
+        "deporte": "Baloncesto",
+        "caracter": "Club",
+        "pais": "España",
+        "nombre": "Real Valladolid Baloncesto",
+        "anio": 2024,
+        "marca": "Kappa",
+        "modelo": "Entrenamiento",
+        "jugador": "",
+        "dorsal": "",
+        "descripcion": "",
+        "fotos": [
+            "000070_foto1.webp"
+        ],
+        "fotoFrontal": "000070_foto1.webp",
+        "fotoTrasera": ""
+    },
+    {
+        "id": 71,
+        "fechaAlta": "2026-11-17",
+        "deporte": "Fútbol",
+        "caracter": "Club",
+        "pais": "España",
+        "nombre": "Real Betis",
+        "anio": 2023,
+        "marca": "Hummel",
+        "modelo": "Tercera",
+        "jugador": "",
+        "dorsal": "",
+        "descripcion": "",
+        "fotos": [
+            "000071_foto1.webp"
+        ],
+        "fotoFrontal": "000071_foto1.webp",
+        "fotoTrasera": ""
+    },
+    {
+        "id": 72,
+        "fechaAlta": "2026-11-17",
+        "deporte": "Fútbol",
+        "caracter": "Club",
+        "pais": "España",
+        "nombre": "Real Valladolid",
+        "anio": 2005,
+        "marca": "Umbro",
+        "modelo": "Visitante",
+        "jugador": "",
+        "dorsal": "30",
+        "descripcion": "",
+        "fotos": [
+            "000072_foto1.webp",
+            "000072_foto2.webp"
+        ],
+        "fotoFrontal": "000072_foto1.webp",
+        "fotoTrasera": "000072_foto2.webp"
+    },
+    {
+        "id": 73,
+        "fechaAlta": "2026-11-17",
+        "deporte": "Fútbol",
+        "caracter": "Club",
+        "pais": "España",
+        "nombre": "Real Valladolid",
+        "anio": 1983,
+        "marca": "Adidas",
+        "modelo": "Local",
+        "jugador": "",
+        "dorsal": "8",
+        "descripcion": "",
+        "fotos": [
+            "000073_foto1.webp",
+            "000073_foto2.webp"
+        ],
+        "fotoFrontal": "000073_foto1.webp",
+        "fotoTrasera": "000073_foto2.webp"
+    },
+    {
+        "id": 74,
+        "fechaAlta": "2026-11-17",
+        "deporte": "Fútbol",
+        "caracter": "Club",
+        "pais": "Brasil",
+        "nombre": "Corinthians",
+        "anio": 2018,
+        "marca": "Nike",
+        "modelo": "Tercera",
+        "jugador": "",
+        "dorsal": "",
+        "descripcion": "",
+        "fotos": [
+            "000074_foto1.webp"
+        ],
+        "fotoFrontal": "000074_foto1.webp",
+        "fotoTrasera": ""
+    },
+    {
+        "id": 75,
+        "fechaAlta": "2026-11-17",
+        "deporte": "Fútbol",
+        "caracter": "Club",
+        "pais": "España",
+        "nombre": "Real Valladolid",
+        "anio": 2025,
+        "marca": "Kappa",
+        "modelo": "Visitante",
+        "jugador": "",
+        "dorsal": "",
+        "descripcion": "",
+        "fotos": [
+            "000075_foto1.webp"
+        ],
+        "fotoFrontal": "000075_foto1.webp",
+        "fotoTrasera": ""
+    },
+    {
+        "id": 76,
+        "fechaAlta": "2026-11-17",
+        "deporte": "Fútbol",
+        "caracter": "Club",
+        "pais": "España",
+        "nombre": "Real Valladolid",
+        "anio": 2017,
+        "marca": "Hummel",
+        "modelo": "Local",
+        "jugador": "",
+        "dorsal": "",
+        "descripcion": "",
+        "fotos": [
+            "000076_foto1.webp"
+        ],
+        "fotoFrontal": "000076_foto1.webp",
+        "fotoTrasera": ""
+    },
+    {
+        "id": 77,
+        "fechaAlta": "2026-11-17",
+        "deporte": "Fútbol",
+        "caracter": "Club",
+        "pais": "España",
+        "nombre": "Real Valladolid",
+        "anio": 2020,
+        "marca": "Adidas",
+        "modelo": "Visitante",
+        "jugador": "Diego Herrero",
+        "dorsal": "14",
+        "descripcion": "",
+        "fotos": [
+            "000077_foto1.webp",
+            "000077_foto2.webp"
+        ],
+        "fotoFrontal": "000077_foto1.webp",
+        "fotoTrasera": "000077_foto2.webp"
+    },
+    {
+        "id": 78,
+        "fechaAlta": "2026-11-17",
+        "deporte": "Fútbol",
+        "caracter": "Club",
+        "pais": "España",
+        "nombre": "Real Valladolid",
+        "anio": 2011,
+        "marca": "Kappa",
+        "modelo": "Visitante",
+        "jugador": "",
+        "dorsal": "",
+        "descripcion": "",
+        "fotos": [
+            "000078_foto1.webp"
+        ],
+        "fotoFrontal": "000078_foto1.webp",
+        "fotoTrasera": ""
+    },
+    {
+        "id": 79,
+        "fechaAlta": "2026-11-17",
+        "deporte": "Fútbol",
+        "caracter": "Club",
+        "pais": "España",
+        "nombre": "Real Valladolid",
+        "anio": 2017,
+        "marca": "Hummel",
+        "modelo": "Visitante",
+        "jugador": "Diego Herrero",
+        "dorsal": "21",
+        "descripcion": "",
+        "fotos": [
+            "000079_foto1.webp",
+            "000079_foto2.webp"
+        ],
+        "fotoFrontal": "000079_foto1.webp",
+        "fotoTrasera": "000079_foto2.webp"
+    },
+    {
+        "id": 80,
+        "fechaAlta": "2026-11-17",
+        "deporte": "Fútbol",
+        "caracter": "Club",
+        "pais": "España",
+        "nombre": "UD Las Palmas",
+        "anio": 2022,
+        "marca": "Hummel",
+        "modelo": "Local",
+        "jugador": "",
+        "dorsal": "",
+        "descripcion": "",
+        "fotos": [
+            "000080_foto1.webp"
+        ],
+        "fotoFrontal": "000080_foto1.webp",
+        "fotoTrasera": ""
     }
 ]
