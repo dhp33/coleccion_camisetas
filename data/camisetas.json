@@ -1017,5 +1017,254 @@
         ],
         "fotoFrontal": "000053_foto1.webp",
         "fotoTrasera": ""
+    },
+    {
+        "id": 54,
+        "fechaAlta": "2026-11-17",
+        "deporte": "Fútbol",
+        "caracter": "Selección",
+        "pais": "España",
+        "nombre": "Selección Española",
+        "anio": 2026,
+        "marca": "Adidas",
+        "modelo": "Local",
+        "jugador": "",
+        "dorsal": "",
+        "descripcion": "",
+        "fotos": [
+            "000054_foto1.webp"
+        ],
+        "fotoFrontal": "000054_foto1.webp",
+        "fotoTrasera": ""
+    },
+    {
+        "id": 55,
+        "fechaAlta": "2026-11-17",
+        "deporte": "Fútbol",
+        "caracter": "Selección",
+        "pais": "España",
+        "nombre": "Selección Española",
+        "anio": 2022,
+        "marca": "Adidas",
+        "modelo": "Local",
+        "jugador": "",
+        "dorsal": "",
+        "descripcion": "",
+        "fotos": [
+            "000055_foto1.webp"
+        ],
+        "fotoFrontal": "000055_foto1.webp",
+        "fotoTrasera": ""
+    },
+    {
+        "id": 56,
+        "fechaAlta": "2026-11-17",
+        "deporte": "Fútbol",
+        "caracter": "Selección",
+        "pais": "España",
+        "nombre": "Selección Española",
+        "anio": 2023,
+        "marca": "Adidas",
+        "modelo": "Visitante",
+        "jugador": "",
+        "dorsal": "",
+        "descripcion": "",
+        "fotos": [
+            "000056_foto1.webp"
+        ],
+        "fotoFrontal": "000056_foto1.webp",
+        "fotoTrasera": ""
+    },
+    {
+        "id": 57,
+        "fechaAlta": "2026-11-17",
+        "deporte": "Fútbol",
+        "caracter": "Selección",
+        "pais": "España",
+        "nombre": "Selección Española",
+        "anio": 2014,
+        "marca": "Adidas",
+        "modelo": "Portero",
+        "jugador": "",
+        "dorsal": "",
+        "descripcion": "",
+        "fotos": [
+            "000057_foto1.webp"
+        ],
+        "fotoFrontal": "000057_foto1.webp",
+        "fotoTrasera": ""
+    },
+    {
+        "id": 58,
+        "fechaAlta": "2026-11-17",
+        "deporte": "Fútbol",
+        "caracter": "Selección",
+        "pais": "España",
+        "nombre": "Selección Española",
+        "anio": 2018,
+        "marca": "Adidas",
+        "modelo": "Local",
+        "jugador": "",
+        "dorsal": "",
+        "descripcion": "",
+        "fotos": [
+            "000058_foto1.webp"
+        ],
+        "fotoFrontal": "000058_foto1.webp",
+        "fotoTrasera": ""
+    },
+    {
+        "id": 59,
+        "fechaAlta": "2026-11-17",
+        "deporte": "Fútbol",
+        "caracter": "Selección",
+        "pais": "España",
+        "nombre": "Selección Española",
+        "anio": 2026,
+        "marca": "Adidas",
+        "modelo": "Portero",
+        "jugador": "",
+        "dorsal": "",
+        "descripcion": "",
+        "fotos": [
+            "000059_foto1.webp"
+        ],
+        "fotoFrontal": "000059_foto1.webp",
+        "fotoTrasera": ""
+    },
+    {
+        "id": 60,
+        "fechaAlta": "2026-11-17",
+        "deporte": "Fútbol",
+        "caracter": "Selección",
+        "pais": "España",
+        "nombre": "Selección Española",
+        "anio": 1992,
+        "marca": "Kelme",
+        "modelo": "Local",
+        "jugador": "",
+        "dorsal": "",
+        "descripcion": "",
+        "fotos": [
+            "000060_foto1.webp"
+        ],
+        "fotoFrontal": "000060_foto1.webp",
+        "fotoTrasera": ""
+    },
+    {
+        "id": 61,
+        "fechaAlta": "2026-11-17",
+        "deporte": "Fútbol",
+        "caracter": "Selección",
+        "pais": "España",
+        "nombre": "Selección Española",
+        "anio": 2010,
+        "marca": "Adidas",
+        "modelo": "Local",
+        "jugador": "David Villa",
+        "dorsal": "7",
+        "descripcion": "",
+        "fotos": [
+            "000061_foto1.webp",
+            "000061_foto2.webp"
+        ],
+        "fotoFrontal": "000061_foto1.webp",
+        "fotoTrasera": "000061_foto2.webp"
+    },
+    {
+        "id": 62,
+        "fechaAlta": "2026-11-17",
+        "deporte": "Fútbol",
+        "caracter": "Selección",
+        "pais": "España",
+        "nombre": "Selección Española",
+        "anio": 2008,
+        "marca": "Adidas",
+        "modelo": "Portero",
+        "jugador": "Iker Casillas",
+        "dorsal": "1",
+        "descripcion": "",
+        "fotos": [
+            "000062_foto1.webp",
+            "000062_foto2.webp"
+        ],
+        "fotoFrontal": "000062_foto1.webp",
+        "fotoTrasera": "000062_foto2.webp"
+    },
+    {
+        "id": 63,
+        "fechaAlta": "2026-11-17",
+        "deporte": "Fútbol",
+        "caracter": "Selección",
+        "pais": "España",
+        "nombre": "Selección Española",
+        "anio": 2012,
+        "marca": "Adidas",
+        "modelo": "Local",
+        "jugador": "",
+        "dorsal": "",
+        "descripcion": "",
+        "fotos": [
+            "000063_foto1.webp"
+        ],
+        "fotoFrontal": "000063_foto1.webp",
+        "fotoTrasera": ""
+    },
+    {
+        "id": 64,
+        "fechaAlta": "2026-11-17",
+        "deporte": "Fútbol",
+        "caracter": "Selección",
+        "pais": "España",
+        "nombre": "Selección Española",
+        "anio": 2016,
+        "marca": "Adidas",
+        "modelo": "Local",
+        "jugador": "",
+        "dorsal": "",
+        "descripcion": "",
+        "fotos": [
+            "000064_foto1.webp"
+        ],
+        "fotoFrontal": "000064_foto1.webp",
+        "fotoTrasera": ""
+    },
+    {
+        "id": 65,
+        "fechaAlta": "2026-11-17",
+        "deporte": "Fútbol",
+        "caracter": "Selección",
+        "pais": "España",
+        "nombre": "Selección Española",
+        "anio": 2002,
+        "marca": "Adidas",
+        "modelo": "Local",
+        "jugador": "",
+        "dorsal": "",
+        "descripcion": "",
+        "fotos": [
+            "000065_foto1.webp"
+        ],
+        "fotoFrontal": "000065_foto1.webp",
+        "fotoTrasera": ""
+    },
+    {
+        "id": 66,
+        "fechaAlta": "2026-11-17",
+        "deporte": "Rugby",
+        "caracter": "Selección",
+        "pais": "Sudáfrica",
+        "nombre": "Selección de Sudáfrica",
+        "anio": 2023,
+        "marca": "Nike",
+        "modelo": "Local",
+        "jugador": "",
+        "dorsal": "",
+        "descripcion": "",
+        "fotos": [
+            "000066_foto1.webp"
+        ],
+        "fotoFrontal": "000066_foto1.webp",
+        "fotoTrasera": ""
     }
 ]
