@@ -649,10 +649,16 @@ function generarTituloCamiseta(camiseta) {
         return `Camiseta de árbitro de ${equipo || "equipo sin nombre"}${anio}`;
     }
 
-    // Selecciones.
+	// Selecciones.
     if (caracter === "selección" || caracter === "seleccion") {
-        return `Camiseta ${tipoModelo}de ${equipo || "equipo sin nombre"}${anio}`
-            .replace(/\s+/g, " ").trim();
+		if(equipo.startsWith("Selección") || equipo.startsWith("Seleccion")){
+			return `Camiseta ${tipoModelo}de la ${equipo || "equipo sin nombre"}${anio}`
+				.replace(/\s+/g, " ").trim();	
+		}else{
+			return `Camiseta ${tipoModelo}de ${equipo || "equipo sin nombre"}${anio}`
+				.replace(/\s+/g, " ").trim();	
+			
+		}			     
     }
 
     // Clubes.
