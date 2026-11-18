@@ -1536,5 +1536,196 @@
         ],
         "fotoFrontal": "000080_foto1.webp",
         "fotoTrasera": ""
+    },
+    {
+        "id": 81,
+        "fechaAlta": "2026-11-18",
+        "deporte": "Fútbol",
+        "caracter": "Club",
+        "pais": "España",
+        "nombre": "Real Valladolid",
+        "anio": 2024,
+        "marca": "Kappa",
+        "modelo": "Entrenamiento",
+        "jugador": "",
+        "dorsal": "",
+        "descripcion": "",
+        "fotos": [
+            "000081_foto1.webp"
+        ],
+        "fotoFrontal": "000081_foto1.webp",
+        "fotoTrasera": ""
+    },
+    {
+        "id": 82,
+        "fechaAlta": "2026-11-18",
+        "deporte": "Fútbol",
+        "caracter": "Club",
+        "pais": "España",
+        "nombre": "Real Valladolid",
+        "anio": 2020,
+        "marca": "Adidas",
+        "modelo": "Local",
+        "jugador": "Diego Herrero",
+        "dorsal": "14",
+        "descripcion": "",
+        "fotos": [
+            "000082_foto1.webp",
+            "000082_foto2.webp"
+        ],
+        "fotoFrontal": "000082_foto1.webp",
+        "fotoTrasera": "000082_foto2.webp"
+    },
+    {
+        "id": 83,
+        "fechaAlta": "2026-11-18",
+        "deporte": "Fútbol",
+        "caracter": "Club",
+        "pais": "España",
+        "nombre": "Valencia",
+        "anio": 2003,
+        "marca": "Nike",
+        "modelo": "Local",
+        "jugador": "",
+        "dorsal": "",
+        "descripcion": "",
+        "fotos": [
+            "000083_foto1.webp"
+        ],
+        "fotoFrontal": "000083_foto1.webp",
+        "fotoTrasera": ""
+    },
+    {
+        "id": 84,
+        "fechaAlta": "2026-11-18",
+        "deporte": "Fútbol",
+        "caracter": "Club",
+        "pais": "España",
+        "nombre": "Athletic de Bilbao",
+        "anio": 2018,
+        "marca": "New Balance",
+        "modelo": "Local",
+        "jugador": "",
+        "dorsal": "",
+        "descripcion": "",
+        "fotos": [
+            "000084_foto1.webp"
+        ],
+        "fotoFrontal": "000084_foto1.webp",
+        "fotoTrasera": ""
+    },
+    {
+        "id": 85,
+        "fechaAlta": "2026-11-18",
+        "deporte": "Fútbol",
+        "caracter": "Club",
+        "pais": "Italia",
+        "nombre": "ACF Fiorentina",
+        "anio": 2022,
+        "marca": "Kappa",
+        "modelo": "Local",
+        "jugador": "",
+        "dorsal": "",
+        "descripcion": "",
+        "fotos": [
+            "000085_foto1.webp"
+        ],
+        "fotoFrontal": "000085_foto1.webp",
+        "fotoTrasera": ""
+    },
+    {
+        "id": 86,
+        "fechaAlta": "2026-11-18",
+        "deporte": "Fútbol",
+        "caracter": "Club",
+        "pais": "España",
+        "nombre": "Real Oviedo",
+        "anio": 2015,
+        "marca": "Hummel",
+        "modelo": "Local",
+        "jugador": "",
+        "dorsal": "",
+        "descripcion": "",
+        "fotos": [
+            "000086_foto1.webp"
+        ],
+        "fotoFrontal": "000086_foto1.webp",
+        "fotoTrasera": ""
+    },
+    {
+        "id": 87,
+        "fechaAlta": "2026-11-18",
+        "deporte": "Fútbol",
+        "caracter": "Club",
+        "pais": "España",
+        "nombre": "Real Madrid",
+        "anio": 2020,
+        "marca": "Adidas",
+        "modelo": "Visitante",
+        "jugador": "",
+        "dorsal": "",
+        "descripcion": "",
+        "fotos": [
+            "000087_foto1.webp"
+        ],
+        "fotoFrontal": "000087_foto1.webp",
+        "fotoTrasera": ""
+    },
+    {
+        "id": 88,
+        "fechaAlta": "2026-11-18",
+        "deporte": "Fútbol",
+        "caracter": "Club",
+        "pais": "España",
+        "nombre": "Real Betis",
+        "anio": 1996,
+        "marca": "Kappa",
+        "modelo": "Local",
+        "jugador": "Finidi George",
+        "dorsal": "25",
+        "descripcion": "",
+        "fotos": [
+            "000088_foto1.webp"
+        ],
+        "fotoFrontal": "000088_foto1.webp",
+        "fotoTrasera": ""
+    },
+    {
+        "id": 89,
+        "fechaAlta": "2026-11-18",
+        "deporte": "Fútbol",
+        "caracter": "Selección",
+        "pais": "Alemania",
+        "nombre": "Selección Alemana",
+        "anio": 2022,
+        "marca": "Adidas",
+        "modelo": "Visitante",
+        "jugador": "",
+        "dorsal": "",
+        "descripcion": "",
+        "fotos": [
+            "000089_foto1.webp"
+        ],
+        "fotoFrontal": "000089_foto1.webp",
+        "fotoTrasera": ""
+    },
+    {
+        "id": 90,
+        "fechaAlta": "2026-11-18",
+        "deporte": "Fútbol",
+        "caracter": "Club",
+        "pais": "España",
+        "nombre": "Racing de Santander",
+        "anio": 2009,
+        "marca": "Slam",
+        "modelo": "Visitante",
+        "jugador": "",
+        "dorsal": "",
+        "descripcion": "",
+        "fotos": [
+            "000090_foto1.webp"
+        ],
+        "fotoFrontal": "000090_foto1.webp",
+        "fotoTrasera": ""
     }
 ]
