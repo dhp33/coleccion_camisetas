@@ -1727,5 +1727,24 @@
         ],
         "fotoFrontal": "000090_foto1.webp",
         "fotoTrasera": ""
+    },
+    {
+        "id": 91,
+        "fechaAlta": "2026-11-19",
+        "deporte": "Fútbol",
+        "caracter": "Club",
+        "pais": "España",
+        "nombre": "CP Cacereño",
+        "anio": 2026,
+        "marca": "Hummel",
+        "modelo": "Local",
+        "jugador": "",
+        "dorsal": "",
+        "descripcion": "",
+        "fotos": [
+            "000091_foto1.webp"
+        ],
+        "fotoFrontal": "000091_foto1.webp",
+        "fotoTrasera": ""
     }
 ]
