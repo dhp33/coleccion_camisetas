@@ -44,7 +44,7 @@
         "deporte": "Baloncesto",
         "caracter": "Club",
         "pais": "España",
-        "nombre": "Forum Valladolid",
+        "nombre": "Fórum Valladolid",
         "anio": 1993,
         "marca": "Austral",
         "modelo": "Local",
@@ -83,7 +83,7 @@
         "deporte": "Fútbol",
         "caracter": "Club",
         "pais": "España",
-        "nombre": "Sevilla",
+        "nombre": "Sevilla FC",
         "anio": 2016,
         "marca": "New Balance",
         "modelo": "Especial",
@@ -508,7 +508,7 @@
         "deporte": "Fútbol",
         "caracter": "Club",
         "pais": "Portugal",
-        "nombre": "Oporto FC",
+        "nombre": "FC Porto",
         "anio": 2015,
         "marca": "New Balance",
         "modelo": "Tercera",
@@ -853,7 +853,7 @@
         "deporte": "Fútbol",
         "caracter": "Club",
         "pais": "España",
-        "nombre": "Tenerife",
+        "nombre": "CD Tenerife",
         "anio": 2024,
         "marca": "Hummel",
         "modelo": "Local",
@@ -1408,7 +1408,7 @@
         "deporte": "Fútbol",
         "caracter": "Club",
         "pais": "Brasil",
-        "nombre": "Corinthians",
+        "nombre": "SC Corinthians Paulista",
         "anio": 2018,
         "marca": "Nike",
         "modelo": "Tercera",
@@ -1582,7 +1582,7 @@
         "deporte": "Fútbol",
         "caracter": "Club",
         "pais": "España",
-        "nombre": "Valencia",
+        "nombre": "Valencia CF",
         "anio": 2003,
         "marca": "Nike",
         "modelo": "Local",
@@ -1601,7 +1601,7 @@
         "deporte": "Fútbol",
         "caracter": "Club",
         "pais": "España",
-        "nombre": "Athletic de Bilbao",
+        "nombre": "Athletic Club de Bilbao",
         "anio": 2018,
         "marca": "New Balance",
         "modelo": "Local",
@@ -1715,7 +1715,7 @@
         "deporte": "Fútbol",
         "caracter": "Club",
         "pais": "España",
-        "nombre": "Racing de Santander",
+        "nombre": "Real Racing Club de Santander",
         "anio": 2009,
         "marca": "Slam",
         "modelo": "Visitante",
@@ -1745,6 +1745,335 @@
             "000091_foto1.webp"
         ],
         "fotoFrontal": "000091_foto1.webp",
+        "fotoTrasera": ""
+    },
+    {
+        "id": 92,
+        "fechaAlta": "2026-11-21",
+        "deporte": "Fútbol",
+        "caracter": "Club",
+        "pais": "Italia",
+        "nombre": "ACF Fiorentina",
+        "anio": 2005,
+        "marca": "Lotto",
+        "modelo": "Local",
+        "jugador": "Maresca",
+        "dorsal": "14",
+        "descripcion": "",
+        "fotos": [
+            "000092_foto1.webp",
+            "000092_foto2.webp"
+        ],
+        "fotoFrontal": "000092_foto1.webp",
+        "fotoTrasera": "000092_foto2.webp"
+    },
+    {
+        "id": 93,
+        "fechaAlta": "2026-11-21",
+        "deporte": "Fútbol",
+        "caracter": "Club",
+        "pais": "España",
+        "nombre": "Real Betis",
+        "anio": 2012,
+        "marca": "Macron",
+        "modelo": "Entrenamiento",
+        "jugador": "",
+        "dorsal": "",
+        "descripcion": "",
+        "fotos": [
+            "000093_foto1.webp"
+        ],
+        "fotoFrontal": "000093_foto1.webp",
+        "fotoTrasera": ""
+    },
+    {
+        "id": 94,
+        "fechaAlta": "2026-11-21",
+        "deporte": "Fútbol",
+        "caracter": "Club",
+        "pais": "España",
+        "nombre": "Real Madrid",
+        "anio": 2012,
+        "marca": "Adidas",
+        "modelo": "Local",
+        "jugador": "",
+        "dorsal": "",
+        "descripcion": "",
+        "fotos": [
+            "000094_foto1.webp"
+        ],
+        "fotoFrontal": "000094_foto1.webp",
+        "fotoTrasera": ""
+    },
+    {
+        "id": 95,
+        "fechaAlta": "2026-11-21",
+        "deporte": "Fútbol",
+        "caracter": "Club",
+        "pais": "España",
+        "nombre": "Real Madrid",
+        "anio": 2012,
+        "marca": "Adidas",
+        "modelo": "Portero",
+        "jugador": "",
+        "dorsal": "",
+        "descripcion": "",
+        "fotos": [
+            "000095_foto1.webp"
+        ],
+        "fotoFrontal": "000095_foto1.webp",
+        "fotoTrasera": ""
+    },
+    {
+        "id": 96,
+        "fechaAlta": "2026-11-21",
+        "deporte": "Fútbol",
+        "caracter": "Club",
+        "pais": "Inglaterra",
+        "nombre": "Chelsea FC",
+        "anio": 2012,
+        "marca": "Adidas",
+        "modelo": "Local",
+        "jugador": "",
+        "dorsal": "",
+        "descripcion": "",
+        "fotos": [
+            "000096_foto1.webp"
+        ],
+        "fotoFrontal": "000096_foto1.webp",
+        "fotoTrasera": ""
+    },
+    {
+        "id": 97,
+        "fechaAlta": "2026-11-21",
+        "deporte": "Fútbol",
+        "caracter": "Club",
+        "pais": "Portugal",
+        "nombre": "FC Porto",
+        "anio": 2016,
+        "marca": "New Balance",
+        "modelo": "Portero",
+        "jugador": "Iker Casillas",
+        "dorsal": "1",
+        "descripcion": "",
+        "fotos": [
+            "000097_foto1.webp",
+            "000097_foto2.webp"
+        ],
+        "fotoFrontal": "000097_foto1.webp",
+        "fotoTrasera": "000097_foto2.webp"
+    },
+    {
+        "id": 98,
+        "fechaAlta": "2026-11-21",
+        "deporte": "Fútbol",
+        "caracter": "Club",
+        "pais": "España",
+        "nombre": "Real Madrid",
+        "anio": 2014,
+        "marca": "Adidas",
+        "modelo": "Visitante",
+        "jugador": "Sergio Ramos",
+        "dorsal": "4",
+        "descripcion": "",
+        "fotos": [
+            "000098_foto1.webp",
+            "000098_foto2.webp"
+        ],
+        "fotoFrontal": "000098_foto1.webp",
+        "fotoTrasera": "000098_foto2.webp"
+    },
+    {
+        "id": 99,
+        "fechaAlta": "2026-11-21",
+        "deporte": "Fútbol",
+        "caracter": "Club",
+        "pais": "Alemania",
+        "nombre": "FC Schalke 04",
+        "anio": 2010,
+        "marca": "Adidas",
+        "modelo": "Local",
+        "jugador": "Raúl",
+        "dorsal": "7",
+        "descripcion": "",
+        "fotos": [
+            "000099_foto1.webp",
+            "000099_foto2.webp"
+        ],
+        "fotoFrontal": "000099_foto1.webp",
+        "fotoTrasera": "000099_foto2.webp"
+    },
+    {
+        "id": 100,
+        "fechaAlta": "2026-11-21",
+        "deporte": "Fútbol",
+        "caracter": "Club",
+        "pais": "España",
+        "nombre": "Real Madrid",
+        "anio": 2023,
+        "marca": "Adidas",
+        "modelo": "Especial",
+        "jugador": "",
+        "dorsal": "",
+        "descripcion": "",
+        "fotos": [
+            "000100_foto1.webp"
+        ],
+        "fotoFrontal": "000100_foto1.webp",
+        "fotoTrasera": ""
+    },
+    {
+        "id": 101,
+        "fechaAlta": "2026-11-21",
+        "deporte": "Fútbol",
+        "caracter": "Club",
+        "pais": "España",
+        "nombre": "Real Betis",
+        "anio": 2012,
+        "marca": "Macron",
+        "modelo": "Local",
+        "jugador": "",
+        "dorsal": "",
+        "descripcion": "",
+        "fotos": [
+            "000101_foto1.webp"
+        ],
+        "fotoFrontal": "000101_foto1.webp",
+        "fotoTrasera": ""
+    },
+    {
+        "id": 102,
+        "fechaAlta": "2026-11-21",
+        "deporte": "Fútbol",
+        "caracter": "Club",
+        "pais": "España",
+        "nombre": "Real Madrid",
+        "anio": 2017,
+        "marca": "Adidas",
+        "modelo": "Visitante",
+        "jugador": "",
+        "dorsal": "",
+        "descripcion": "",
+        "fotos": [
+            "000102_foto1.webp"
+        ],
+        "fotoFrontal": "000102_foto1.webp",
+        "fotoTrasera": ""
+    },
+    {
+        "id": 103,
+        "fechaAlta": "2026-11-21",
+        "deporte": "Fútbol",
+        "caracter": "Club",
+        "pais": "Alemania",
+        "nombre": "Bayern Munich",
+        "anio": 2014,
+        "marca": "Adidas",
+        "modelo": "Tercera",
+        "jugador": "Xabi Alonso",
+        "dorsal": "3",
+        "descripcion": "",
+        "fotos": [
+            "000103_foto1.webp",
+            "000103_foto2.webp"
+        ],
+        "fotoFrontal": "000103_foto1.webp",
+        "fotoTrasera": "000103_foto2.webp"
+    },
+    {
+        "id": 104,
+        "fechaAlta": "2026-11-21",
+        "deporte": "Fútbol",
+        "caracter": "Club",
+        "pais": "España",
+        "nombre": "Real Madrid",
+        "anio": 2007,
+        "marca": "Adidas",
+        "modelo": "Local",
+        "jugador": "",
+        "dorsal": "",
+        "descripcion": "",
+        "fotos": [
+            "000104_foto1.webp"
+        ],
+        "fotoFrontal": "000104_foto1.webp",
+        "fotoTrasera": ""
+    },
+    {
+        "id": 105,
+        "fechaAlta": "2026-11-21",
+        "deporte": "Fútbol",
+        "caracter": "Club",
+        "pais": "España",
+        "nombre": "Real Madrid",
+        "anio": 2022,
+        "marca": "Adidas",
+        "modelo": "Local",
+        "jugador": "",
+        "dorsal": "",
+        "descripcion": "",
+        "fotos": [
+            "000105_foto1.webp"
+        ],
+        "fotoFrontal": "000105_foto1.webp",
+        "fotoTrasera": ""
+    },
+    {
+        "id": 106,
+        "fechaAlta": "2026-11-21",
+        "deporte": "Fútbol",
+        "caracter": "Club",
+        "pais": "España",
+        "nombre": "Real Madrid",
+        "anio": 2016,
+        "marca": "Adidas",
+        "modelo": "Tercera",
+        "jugador": "Cristiano Ronaldo",
+        "dorsal": "7",
+        "descripcion": "",
+        "fotos": [
+            "000106_foto1.webp",
+            "000106_foto2.webp"
+        ],
+        "fotoFrontal": "000106_foto1.webp",
+        "fotoTrasera": "000106_foto2.webp"
+    },
+    {
+        "id": 107,
+        "fechaAlta": "2026-11-21",
+        "deporte": "Fútbol",
+        "caracter": "Club",
+        "pais": "Francia",
+        "nombre": "Olympique de Lyon",
+        "anio": 2007,
+        "marca": "Umbro",
+        "modelo": "Local",
+        "jugador": "",
+        "dorsal": "",
+        "descripcion": "",
+        "fotos": [
+            "000107_foto1.webp"
+        ],
+        "fotoFrontal": "000107_foto1.webp",
+        "fotoTrasera": ""
+    },
+    {
+        "id": 108,
+        "fechaAlta": "2026-11-21",
+        "deporte": "Fútbol",
+        "caracter": "Club",
+        "pais": "España",
+        "nombre": "Real Madrid",
+        "anio": 2004,
+        "marca": "Adidas",
+        "modelo": "Local",
+        "jugador": "",
+        "dorsal": "",
+        "descripcion": "",
+        "fotos": [
+            "000108_foto1.webp"
+        ],
+        "fotoFrontal": "000108_foto1.webp",
         "fotoTrasera": ""
     }
 ]
